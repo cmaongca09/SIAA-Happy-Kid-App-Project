@@ -37,8 +37,8 @@
             orientation: 'vertical'
             size_hint_y: None
             height: 200
-            padding: 10
-            spacing: 5
+            padding: 50
+            spacing: 10
             TextInput:
                 id: username
                 hint_text: 'Username'
@@ -46,6 +46,7 @@
                 size_hint: None, None
                 size: 300, 40  # Set the size of the username input field
                 pos_hint: {'center_x': 0.5}  # Center the username input horizontally
+
             TextInput:
                 id: password
                 hint_text: 'Password'
@@ -58,13 +59,14 @@
                 text: 'Login'
                 on_press: root.manager.current = 'main'
                 size_hint: None, None
-                size: 100, 40  # Set the size of the login button
+                size: 150, 30  # Set the size of the login button
+                spacing: 20
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
             Button:
                 text: 'Create Account'
                 on_press: root.create_account()
                 size_hint: None, None
-                size: 150, 40  # Set the size of the create account button
+                size: 150, 30  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
 
 <CreateAccountScreen>:
