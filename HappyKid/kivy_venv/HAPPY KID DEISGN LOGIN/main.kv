@@ -1,7 +1,7 @@
 <LoginScreen>:
     name: 'login'
     Image:
-        source: 'image.jpg'
+        source: 'bg1.png'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -124,7 +124,7 @@
                 size: 300, 40
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             Button:
-                text: 'Enter'
+                text: 'LogIn'
                 on_press: root.manager.current = 'main'
                 size_hint: None, None
                 size: 100, 40
