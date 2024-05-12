@@ -1,0 +1,129 @@
+<LoginScreen>:
+    name: 'login'
+    Image:
+        source: 'image.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    GridLayout:
+        cols: 1
+        rows: 4
+        padding: 50
+        spacing: 50
+        size: root.width, root.height
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 300
+            Image:
+                source: 'logo.png'
+                allow_stretch: True
+                keep_ratio: False
+                size_hint: None, None
+                size: 250,220  # Set the size of the image
+                pos_hint: {'center_x': 0.5}  # Center the image horizontally
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 360  # Rotate the image by 45 degrees
+                        axis: 0, 0, 1  # Rotate around the z-axis
+                        origin: self.center  # Rotate around the center of the image
+                canvas.after:
+                    PopMatrix
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 200
+            padding: 10
+            spacing: 5
+            TextInput:
+                id: username
+                hint_text: 'Username'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40  # Set the size of the username input field
+                pos_hint: {'center_x': 0.5}  # Center the username input horizontally
+            TextInput:
+                id: password
+                hint_text: 'Password'
+                password: True
+                multiline: False
+                size_hint: None, None
+                size: 300, 40  # Set the size of the password input field
+                pos_hint: {'center_x': 0.5}  # Center the password input horizontally
+            Button:
+                text: 'Login'
+                on_press: root.manager.current = 'main'
+                size_hint: None, None
+                size: 100, 40  # Set the size of the login button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+            Button:
+                text: 'Create Account'
+                on_press: root.create_account()
+                size_hint: None, None
+                size: 150, 40  # Set the size of the create account button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+
+<CreateAccountScreen>:
+    name: 'create_account'
+    GridLayout:
+        cols: 1
+        padding: 50
+        spacing: 50
+        size: root.width, root.height
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: self.minimum_height
+            TextInput:
+                id: full_name
+                hint_text: 'Full Name'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            TextInput:
+                id: email_address
+                hint_text: 'Email Address'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            TextInput:
+                id: phone_number
+                hint_text: 'Phone Number'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            TextInput:
+                id: home_address
+                hint_text: 'Home Address'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            TextInput:
+                id: username
+                hint_text: 'Username'
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            TextInput:
+                id: password
+                hint_text: 'Password'
+                password: True
+                multiline: False
+                size_hint: None, None
+                size: 300, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+            Button:
+                text: 'Enter'
+                on_press: root.manager.current = 'main'
+                size_hint: None, None
+                size: 100, 40
+                pos_hint: {'center_x': 0.5}  # Center horizontally
