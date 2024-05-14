@@ -39,12 +39,13 @@
             height: 200
             padding: 50
             spacing: 10
+
             TextInput:
                 id: username
                 hint_text: 'Username'
                 multiline: False
                 size_hint: None, None
-                size: 300, 40  # Set the size of the username input field
+                size: 300, 30  # Set the size of the username input field
                 pos_hint: {'center_x': 0.5}  # Center the username input horizontally
 
             TextInput:
@@ -53,13 +54,13 @@
                 password: True
                 multiline: False
                 size_hint: None, None
-                size: 300, 40  # Set the size of the password input field
+                size: 300, 30  # Set the size of the password input field
                 pos_hint: {'center_x': 0.5}  # Center the password input horizontally
             Button:
                 text: 'Login'
                 on_press: root.manager.current = 'main'
                 size_hint: None, None
-                size: 120, 50  # Set the size of the login button
+                size: 180, 30  # Set the size of the login button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
@@ -175,13 +176,13 @@
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             Button
                 text: 'Enter'
-                on_press: root.enter_button()
+                on_press: root.consultation_form()
                 size_hint: None, None
                 size: 120, 30  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
-            Button:
+            Button
                 text: 'Back'
                 on_press: root.manager.current = 'login'  # Navigate back to the login screen
                 size_hint: None, None
@@ -189,4 +190,222 @@
                 pos_hint: {'center_x': 0.5}  # Center horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
+
+<ConsultationForm>:
+    name: 'consultation_form'
+    Image:
+        source: 'mbg.png'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    GridLayout:
+        cols: 1
+        rows: 5  # Increase rows to accommodate the logo
+        padding: 100  # Adjust padding as needed
+        spacing: 10
+        size: root.width, root.height
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 550
+            padding: 100
+            spacing: 10
+            size_hint_x: 1  # Occupy full width
+            pos_hint: {'center_x': 0.5}  # Center horizontally
+            Label:
+                text: "Question1"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question1
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question2"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question2
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question3"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question3
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question4"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question4
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question5"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question5
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Button:
+                text: 'Next'
+                on_press: root.consultation_form2()
+                size_hint: None, None
+                size: 120, 30  # Set the size of the create account button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+                background_color: 0, 2, 0, 2  # Green color
+                color: 1, 1, 1, 1  # White text color
+            Button
+                text: 'Back'
+                on_press: root.manager.current = 'create_account'  # Navigate back to the login screen
+                size_hint: None, None
+                size: 100, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                background_color: 0, 2, 0, 2  # Green color
+                color: 1, 1, 1, 1  # White text color
+               
+
+<ConsultationForm2>:
+    name: 'consultation_form2'
+    Image:
+        source: 'mbg.png'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    GridLayout:
+        cols: 1
+        rows: 5  # Increase rows to accommodate the logo
+        padding: 100  # Adjust padding as needed
+        spacing: 10
+        size: root.width, root.height
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 550
+            padding: 100
+            spacing: 10
+            size_hint_x: 1  # Occupy full width
+            pos_hint: {'center_x': 0.5}  # Center horizontally
+            Label:
+                text: "Question6"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question6
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question7"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question7
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question8"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question8
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question9"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question9
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Label:
+                text: "Question10"
+                size_hint_y: None
+                height: 10
+                color: 0, 0, 0, 1  # Change the font color to black
+            TextInput:
+                id: question10
+                hint_text: 'Answer'
+                multiline: False
+                size_hint: None, None
+                size: 350, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                foreground_color: 0, 0, 0, 1  # Change the text input color to black
+            Button:
+                text: 'Confirm Information'
+                on_press: root.consultation_form2()
+                size_hint: None, None
+                size: 170, 30  # Set the size of the create account button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+                background_color: 0, 2, 0, 2  # Green color
+                color: 1, 1, 1, 1  # White text color
             
+            Button
+                text: 'Back'
+                on_press: root.manager.current = 'consultation_form'  # Navigate back to the login screen
+                size_hint: None, None
+                size: 100, 30
+                pos_hint: {'center_x': 0.5}  # Center horizontally
+                background_color: 0, 2, 0, 2  # Green color
+                color: 1, 1, 1, 1  # White text color
+            
+            
+                
