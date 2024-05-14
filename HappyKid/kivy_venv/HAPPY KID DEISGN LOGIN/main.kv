@@ -93,7 +93,7 @@
             orientation: 'vertical'
             size_hint_y: None
             height: 590
-            padding: 10
+            padding: 100
             spacing: 10
             size_hint_x: 1  # Occupy full width
             pos_hint: {'center_x': 0.5}  # Center horizontally
@@ -115,21 +115,21 @@
                 hint_text: 'Full Name'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             TextInput:
                 id: email_address
                 hint_text: 'Email Address'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             TextInput:
                 id: birthday
                 hint_text: 'Birthday (MM/DD/YYYY)'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
                 input_filter: 'int'
                 input_type: 'number'
@@ -138,7 +138,7 @@
                 hint_text: 'Phone Number'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
                 input_filter: 'int'
                 input_type: 'number'
@@ -148,14 +148,14 @@
                 hint_text: 'Home Address'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             TextInput:
                 id: username
                 hint_text: 'Username'
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             TextInput:
                 id: password
@@ -163,7 +163,7 @@
                 password: True
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
             TextInput:
                 id: confirm password
@@ -171,21 +171,22 @@
                 password: True
                 multiline: False
                 size_hint: None, None
-                size: 350, 40
+                size: 350, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
-            Button:
+            Button
                 text: 'Enter'
-                on_press: root.manager.current = 'login'
+                on_press: root.enter_button()
                 size_hint: None, None
-                size: 150, 50
-                pos_hint: {'center_x': 0.5}  # Center horizontally
+                size: 120, 30  # Set the size of the create account button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
             Button:
                 text: 'Back'
                 on_press: root.manager.current = 'login'  # Navigate back to the login screen
                 size_hint: None, None
-                size: 100, 50
+                size: 100, 30
                 pos_hint: {'center_x': 0.5}  # Center horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
+            
