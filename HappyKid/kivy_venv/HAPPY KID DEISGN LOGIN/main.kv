@@ -23,7 +23,7 @@
                 allow_stretch: True
                 keep_ratio: False
                 size_hint: None, None
-                size: 200,160  # Set the size of the image
+                size: 180,140  # Set the size of the image
                 pos_hint: {'center_x': 0.5}  # Center the image horizontally
                 canvas.before:
                     PushMatrix
@@ -77,7 +77,7 @@
                 text: 'Book Appointment'
                 on_press: root.create_account()
                 size_hint: None, None
-                size: 200, 40  # Set the size of the create account button
+                size: 150, 40  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 3  # Green color
                 color: 0, 0, 0 # White text color
@@ -150,13 +150,13 @@
                     orientation: 'horizontal'
                     spacing: 10
                     size_hint: (None, None)
-                    width: 300
+                    width: 200
                     height: 30
                     pos_hint: {'center_x': 0.5}
                     BoxLayout:
                         orientation: 'vertical'
                         size_hint: (None, None)
-                        width: 250
+                        width: 200
                         Label:
                             text: 'Date of Birth'
                             font_size: 12
@@ -174,7 +174,7 @@
                     BoxLayout:
                         orientation: 'vertical'
                         size_hint: (None, None)
-                        width: 50
+                        width: 200
                         Label:
                             text: 'Gender'
                             font_size: 12
@@ -186,9 +186,9 @@
                             text: 'Select'
                             values: ('Male', 'Female', 'TARARIM', 'BADING', 'KALBO', 'ALDUB', 'MAONGGO')
                             size_hint: (None, None)
-                            width: 100
+                            width: 165
                             height: 30
-                            pos_hint: {'center_x': 0.5}
+                            pos_hint: {'center_y': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
