@@ -11,24 +11,24 @@
     GridLayout:
         cols: 1
         rows: 4
-        padding: 50
+        padding: 10
         spacing: 50
         size: root.width, root.height
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: 300
+            height: 250
             Image:
-                source: 'logo.png'
+                source: 'HAPPY_KID-LOGO.png'
                 allow_stretch: True
                 keep_ratio: False
                 size_hint: None, None
-                size: 250,210  # Set the size of the image
+                size: 200,160  # Set the size of the image
                 pos_hint: {'center_x': 0.5}  # Center the image horizontally
                 canvas.before:
                     PushMatrix
                     Rotate:
-                        angle: 360  # Rotate the image by 45 degrees
+                        angle: 360  # Rotate the image by 360 degrees
                         axis: 0, 0, 1  # Rotate around the z-axis
                         origin: self.center  # Rotate around the center of the image
                 canvas.after:
@@ -36,16 +36,15 @@
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: 200
-            padding: 50
+            height: 170
+            padding: 90
             spacing: 10
-
             TextInput:
                 id: username
                 hint_text: 'Username'
                 multiline: False
                 size_hint: None, None
-                size: 300, 30  # Set the size of the username input field
+                size: 250, 30  # Set the size of the username input field
                 pos_hint: {'center_x': 0.5}  # Center the username input horizontally
 
             TextInput:
@@ -54,358 +53,245 @@
                 password: True
                 multiline: False
                 size_hint: None, None
-                size: 300, 30  # Set the size of the password input field
+                size: 250, 30  # Set the size of the password input field
                 pos_hint: {'center_x': 0.5}  # Center the password input horizontally
             Button:
                 text: 'Login'
                 on_press: root.manager.current = 'main'
                 size_hint: None, None
-                size: 180, 30  # Set the size of the login button
+                size: 200, 30  # Set the size of the login button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
+                background_color: 0, 0, 128
                 color: 1, 1, 1, 1  # White text color
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: -20
+            Label:
+                text: "Doesn't book yet? book your appointment now!"
+                font_size: 14
+                bold: True
+                size_hint_y: None
+                height: 50
             Button:
-                text: 'Create Account'
+                text: 'Book Appointment'
                 on_press: root.create_account()
                 size_hint: None, None
-                size: 150, 30  # Set the size of the create account button
+                size: 200, 40  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-
+                background_color: 0, 2, 0, 3  # Green color
+                color: 0, 0, 0 # White text color
+            
 <CreateAccountScreen>:
     name: 'create_account'
     Image:
-        source: 'mbg.png'
+        source: 'book.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
             Rectangle:
                 pos: self.pos
                 size: self.size
-    GridLayout:
-        cols: 1
-        rows: 5  # Increase rows to accommodate the logo
-        padding: 100  # Adjust padding as needed
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 50, 20, 50]  # Top, right, bottom, left
         spacing: 10
-        size: root.width, root.height
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: 590
-            padding: 100
-            spacing: 10
-            size_hint_x: 1  # Occupy full width
-            pos_hint: {'center_x': 0.5}  # Center horizontally
+            height: 100
             Image:
-                source: 'logo.png'
+                source: 'HAPPY_KID-LOGO.png'
                 allow_stretch: True
                 keep_ratio: True
-                size_hint: (1, None)  # Occupy full width, automatic height
+                size_hint: (None, None)
+                width: 160
+                height: 80
+                pos_hint: {'center_x': 0.5}
             Label:
-                text: " REGISTER "
+                text: "CONSULTATION FORM"
                 font_size: 22
                 bold: True
-                color: 0, 0, 0, 1
-                size_hint: (1, None)  # Occupy full width, automatic height
-                height: self.texture_size[1]
+                color: 0, 0, 0, 1  # Black color
+                size_hint: (None, None)
+                height: 30
+                pos_hint: {'center_x': 0.5}
                 valign: 'middle'
-            TextInput:
-                id: full_name
-                hint_text: 'Full Name'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: email_address
-                hint_text: 'Email Address'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: birthday
-                hint_text: 'Birthday (MM/DD/YYYY)'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                input_filter: 'int'
-                input_type: 'number'
-            TextInput:
-                id: phone_number
-                hint_text: 'Phone Number'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                input_filter: 'int'
-                input_type: 'number'
-                max_length: 11
-            TextInput:
-                id: home_address
-                hint_text: 'Home Address'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: username
-                hint_text: 'Username'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: password
-                hint_text: 'Password'
-                password: True
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: confirm password
-                hint_text: 'Confirm Password'
-                password: True
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            Button
-                text: 'Enter'
-                on_press: root.consultation_form()
-                size_hint: None, None
-                size: 120, 30  # Set the size of the create account button
-                pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-            Button
-                text: 'Back'
-                on_press: root.manager.current = 'login'  # Navigate back to the login screen
-                size_hint: None, None
-                size: 100, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
+                halign: 'center'
+            GridLayout:
+                cols: 1
+                row_default_height: 50
+                row_force_default: True
+                spacing: 5
+                size_hint: (None, None)
+                width: 400
+                height: self.minimum_height
+                pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: "Client's Full Name (Student Enrollee)"
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 20
+                    TextInput:
+                        id: full_name
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'horizontal'
+                    spacing: 10
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 250
+                        Label:
+                            text: 'Date of Birth'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        TextInput:
+                            id: dob
+                            hint_text: 'MM/DD/YYYY'
+                            multiline: False
+                            size_hint: (None, None)
+                            width: 150
+                            height: 30
+                            pos_hint: {'center_x': 0.5}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 50
+                        Label:
+                            text: 'Gender'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        Spinner:
+                            id: gender
+                            text: 'Select'
+                            values: ('Male', 'Female', 'TARARIM', 'BADING', 'KALBO', 'ALDUB', 'MAONGGO')
+                            size_hint: (None, None)
+                            width: 100
+                            height: 30
+                            pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_2
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_3
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_4
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_5
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_6
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Button:
+                        text: 'Next'
+                        size_hint: (None, None)
+                        width: 200
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                        background_color: 0, 2, 0, 2  # Green color
+                        color: 0, 0, 0 
+                        on_release:
+                            app.root.current = 'book'
 
-<ConsultationForm>:
-    name: 'consultation_form'
-    Image:
-        source: 'mbg.png'
-        allow_stretch: True
-        keep_ratio: False
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-    GridLayout:
-        cols: 1
-        rows: 5  # Increase rows to accommodate the logo
-        padding: 100  # Adjust padding as needed
-        spacing: 10
-        size: root.width, root.height
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            height: 550
-            padding: 100
-            spacing: 10
-            size_hint_x: 1  # Occupy full width
-            pos_hint: {'center_x': 0.5}  # Center horizontally
-            Label:
-                text: "Question1"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question1
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question2"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question2
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question3"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question3
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question4"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question4
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question5"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question5
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Button:
-                text: 'Next'
-                on_press: root.consultation_form2()
-                size_hint: None, None
-                size: 120, 30  # Set the size of the create account button
-                pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-            Button
-                text: 'Back'
-                on_press: root.manager.current = 'create_account'  # Navigate back to the login screen
-                size_hint: None, None
-                size: 100, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-               
+<BookAppointment>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Book Appointment Screen'
 
-<ConsultationForm2>:
-    name: 'consultation_form2'
-    Image:
-        source: 'mbg.png'
-        allow_stretch: True
-        keep_ratio: False
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-    GridLayout:
-        cols: 1
-        rows: 5  # Increase rows to accommodate the logo
-        padding: 100  # Adjust padding as needed
-        spacing: 10
-        size: root.width, root.height
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            height: 550
-            padding: 100
-            spacing: 10
-            size_hint_x: 1  # Occupy full width
-            pos_hint: {'center_x': 0.5}  # Center horizontally
-            Label:
-                text: "Question6"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question6
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question7"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question7
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question8"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question8
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question9"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question9
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Label:
-                text: "Question10"
-                size_hint_y: None
-                height: 10
-                color: 0, 0, 0, 1  # Change the font color to black
-            TextInput:
-                id: question10
-                hint_text: 'Answer'
-                multiline: False
-                size_hint: None, None
-                size: 350, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                foreground_color: 0, 0, 0, 1  # Change the text input color to black
-            Button:
-                text: 'Confirm Information'
-                on_press: root.consultation_form2()
-                size_hint: None, None
-                size: 170, 30  # Set the size of the create account button
-                pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-            
-            Button
-                text: 'Back'
-                on_press: root.manager.current = 'consultation_form'  # Navigate back to the login screen
-                size_hint: None, None
-                size: 100, 30
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-            
-            
-                
