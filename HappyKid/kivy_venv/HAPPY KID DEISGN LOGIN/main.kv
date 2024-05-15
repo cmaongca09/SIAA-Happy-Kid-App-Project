@@ -28,7 +28,7 @@
                 canvas.before:
                     PushMatrix
                     Rotate:
-                        angle: 360  # Rotate the image by 45 degrees
+                        angle: 360  # Rotate the image by 360 degrees
                         axis: 0, 0, 1  # Rotate around the z-axis
                         origin: self.center  # Rotate around the center of the image
                 canvas.after:
@@ -63,129 +63,259 @@
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 2  # Green color
                 color: 1, 1, 1, 1  # White text color
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 60
+            padding: [50, 0, 50, 0]  # Top, right, bottom, left
+            spacing: 20
+            Label:
+                text: "Doesn't book yet? book your appointment now!"
+                font_size: 20
+                bold: True
+                size_hint_y: None
+                height: 10
             Button:
-                text: 'Create Account'
+                text: 'Book Appointment'
                 on_press: root.create_account()
                 size_hint: None, None
-                size: 150, 30  # Set the size of the create account button
+                size: 200, 50  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 2, 0, 2  # Green color
+                background_color: 0, 2, 0, 3  # Green color
                 color: 1, 1, 1, 1  # White text color
+
 
 <CreateAccountScreen>:
     name: 'create_account'
     Image:
-        source: 'mbg.png'
+        source: 'book.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
             Rectangle:
                 pos: self.pos
                 size: self.size
-    GridLayout:
-        cols: 1
-        rows: 5  # Increase rows to accommodate the logo
-        padding: 100  # Adjust padding as needed
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [20, 50, 20, 50]  # Top, right, bottom, left
         spacing: 10
-        size: root.width, root.height
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the grid layout
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
         BoxLayout:
             orientation: 'vertical'
-            size_hint_y: None
-            height: 590
+            size_hint: (None, None)
+            width: 400
+            height: 750
+            pos_hint: {'center_x': 0.5, 'center_y': 0.5}
             padding: 10
             spacing: 10
-            size_hint_x: 1  # Occupy full width
-            pos_hint: {'center_x': 0.5}  # Center horizontally
             Image:
                 source: 'logo.png'
                 allow_stretch: True
                 keep_ratio: True
-                size_hint: (1, None)  # Occupy full width, automatic height
+                size_hint: (None, None)
+                width: 200
+                height: 100
+                pos_hint: {'center_x': 0.5}
             Label:
-                text: " REGISTER "
+                text: "CONSULTATION FORM"
                 font_size: 22
                 bold: True
-                color: 0, 0, 0, 1
-                size_hint: (1, None)  # Occupy full width, automatic height
-                height: self.texture_size[1]
+                color: 0, 0, 0, 1  # Black color
+                size_hint: (None, None)
+                height: 30
+                pos_hint: {'center_x': 0.5}
                 valign: 'middle'
-            TextInput:
-                id: full_name
-                hint_text: 'Full Name'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: email_address
-                hint_text: 'Email Address'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: birthday
-                hint_text: 'Birthday (MM/DD/YYYY)'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                input_filter: 'int'
-                input_type: 'number'
-            TextInput:
-                id: phone_number
-                hint_text: 'Phone Number'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                input_filter: 'int'
-                input_type: 'number'
-                max_length: 11
-            TextInput:
-                id: home_address
-                hint_text: 'Home Address'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: username
-                hint_text: 'Username'
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: password
-                hint_text: 'Password'
-                password: True
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            TextInput:
-                id: confirm password
-                hint_text: 'Confirm Password'
-                password: True
-                multiline: False
-                size_hint: None, None
-                size: 350, 40
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-            Button:
-                text: 'Enter'
-                on_press: root.manager.current = 'login'
-                size_hint: None, None
-                size: 150, 50
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
-            Button:
-                text: 'Back'
-                on_press: root.manager.current = 'login'  # Navigate back to the login screen
-                size_hint: None, None
-                size: 100, 50
-                pos_hint: {'center_x': 0.5}  # Center horizontally
-                background_color: 0, 2, 0, 2  # Green color
-                color: 1, 1, 1, 1  # White text color
+                halign: 'center'
+            GridLayout:
+                cols: 1
+                row_default_height: 50
+                row_force_default: True
+                spacing: 5
+                size_hint: (None, None)
+                width: 400
+                height: self.minimum_height
+                pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: "Client's Full Name (Student Enrollee)"
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 20
+                    TextInput:
+                        id: full_name
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'horizontal'
+                    spacing: 10
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 250
+                        Label:
+                            text: 'Date of Birth'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        TextInput:
+                            id: dob
+                            hint_text: 'MM/DD/YYYY'
+                            multiline: False
+                            size_hint: (None, None)
+                            width: 150
+                            height: 39
+                            pos_hint: {'center_x': 0.5}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 50
+                        Label:
+                            text: 'Gender'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        Spinner:
+                            id: gender
+                            text: 'Select  v'
+                            values: ('Male', 'Female', 'TARARIM', 'BADING', 'KALBO', 'ALDUB', 'MAONGGO')
+                            size_hint: (None, None)
+                            width: 100
+                            height: 40
+                            pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_1
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_2
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_3
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_4
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_5
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    TextInput:
+                        id: blank_question_6
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 350
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Button:
+                        text: 'Next'
+                        size_hint: (None, None)
+                        width: 200
+                        height: 50
+                        pos_hint: {'center_x': 0.5}
+                        background_color: 0, 2, 0, 2  # Green color
+                        color: 1, 1, 1, 1  # White text color
+                        on_release:
+                            app.root.current = 'book'
+
+<BookAppointment>:
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'Book Appointment Screen'
+
