@@ -287,7 +287,7 @@
                         background_color: 0, 2, 0, 2  # Green color
                         color: 0, 0, 0 
                         on_release:
-                            app.root.current = 'book_appointment'
+                            app.root.current = 'create_account2'
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -304,8 +304,8 @@
                             app.root.current = 'login'
                 
 
-<BookAppointment>:
-    name: 'book_appointment_screen'
+<CreateAccountScreen2>:
+    name: 'create_account2'
     Image:
         source: 'book.jpg'
         allow_stretch: True
@@ -457,3 +457,42 @@
                     on_release:
                         app.root.current = 'create_account'
 
+<BookAppointment>:
+    name: 'book_appointment_screen'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10, 30, 20, 30]  # Top, right, bottom, left
+        spacing: 10
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 1}
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 10
+            Label:
+                text: "PARA SAAN BA TO?"
+                font_size: 22
+                bold: True
+                color: 0, 0, 0, 1  # Black color
+                size_hint: (None, None)
+                height: 100
+                pos_hint: {'center_x': 0.5}
+                valign: 'middle'
+                halign: 'center'
+            GridLayout:
+                cols: 1
+                row_default_height: 50
+                row_force_default: True
+                spacing: 5
+                size_hint: (None, None)
+                width: 400
+                height: self.minimum_height
+                pos_hint: {'center_x': 0.5}
