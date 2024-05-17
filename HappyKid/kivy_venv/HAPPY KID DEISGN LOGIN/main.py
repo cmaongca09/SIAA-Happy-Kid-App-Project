@@ -22,7 +22,7 @@ class TestApp(App):
         self.sm = ScreenManager()
         self.login_screen = LoginScreen(name='login')
         self.create_account_screen = CreateAccountScreen(name='create_account')
-        self.book_appointment_screen = BookAppointment(name='book')  # Corrected typo here
+        self.book_appointment_screen = BookAppointment(name='book_appointment')  # Corrected typo here
         self.sm.add_widget(self.login_screen)
         self.sm.add_widget(self.create_account_screen)
         self.sm.add_widget(self.book_appointment_screen)
