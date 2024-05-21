@@ -449,7 +449,7 @@
                     background_color: 0, 2, 0, 2  # Green color
                     color: 0, 0, 0 
                     on_release:
-                        app.root.current = 'book_appointment'
+                        app.root.current = 'dashboard_tab'
             BoxLayout:
                 orientation: 'vertical'
                 size_hint_y: None
@@ -464,8 +464,8 @@
                     on_release:
                         app.root.current = 'create_account'
 
-<BookAppointment>:
-    name: 'book_appointment_screen'
+<DashboardTab>:
+    name: 'dashboard_screen'
     Image:
         source: 'book.jpg'
         allow_stretch: True
@@ -571,10 +571,14 @@
                 text: 'Dashboard'  
                 font_size: 12         
                 height: 50
+                on_release:
+                    app.root.current = 'dashboard_tab'
             Button:
                 text: 'About Center'
                 font_size: 12
                 height: 50
+                on_release:
+                    app.root.current = 'about_center_tab'
             Button:
                 text: 'Notification'
                 font_size: 12
@@ -587,3 +591,37 @@
                 text: 'Account'
                 font_size: 12
                 height: 50
+
+<AboutCenterTab>:
+    name: 'about_center_tab'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'ABOUT CENTER'
+            color: 0, 0, 0
+            size_hint_x: 1
+
+<Notificationtab>:
+    name: 'notification_tab'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'ABOUT CENTER'
+            color: 0, 0, 0
+            size_hint_x: 1

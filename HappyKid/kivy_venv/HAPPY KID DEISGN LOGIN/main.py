@@ -15,7 +15,10 @@ class CreateAccountScreen(Screen):
 class CreateAccountScreen2(Screen):
     pass
 
-class BookAppointment(Screen):
+class DashboardTab(Screen):
+    pass
+
+class AboutCenterTab(Screen):
     pass
 
 class TestApp(App):
@@ -24,11 +27,13 @@ class TestApp(App):
         self.login_screen = LoginScreen(name='login')
         self.create_account_screen = CreateAccountScreen(name='create_account')
         self.create_account_screen2 = CreateAccountScreen2(name='create_account2')
-        self.book_appointment_screen = BookAppointment(name='book_appointment')
+        self.dashboard_tab = DashboardTab(name='dashboard_tab')
+        self.about_center_tab = AboutCenterTab(name='about_center_tab')
         self.sm.add_widget(self.login_screen)
         self.sm.add_widget(self.create_account_screen)
         self.sm.add_widget(self.create_account_screen2)
-        self.sm.add_widget(self.book_appointment_screen)    
+        self.sm.add_widget(self.dashboard_tab)
+        self.sm.add_widget(self.about_center_tab)    
         return self.sm
 
 if __name__ == '__main__':
