@@ -1,7 +1,7 @@
 <LoginScreen>:
     name: 'login'
     Image:
-        source: 'mbg.png'
+        source: 'try.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -17,19 +17,19 @@
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: 250
+            height: 280  # Increased height to give more space above the inputs
             Image:
-                source: 'HAPPY_KID-LOGO.png'
+                source: 'HKLOGO.png'
                 allow_stretch: True
                 keep_ratio: False
                 size_hint: None, None
-                size: 180,140  # Set the size of the image
+                size: 260,210  # Set the size of the image
                 pos_hint: {'center_x': 0.5}  # Center the image horizontally
                 canvas.before:
                     PushMatrix
                     Rotate:
                         angle: 360  # Rotate the image by 360 degrees
-                        axis: 0, 0, 1  # Rotate around the z-axis
+                        axis: 0, 0, 2  # Rotate around the z-axis
                         origin: self.center  # Rotate around the center of the image
                 canvas.after:
                     PopMatrix
@@ -44,7 +44,7 @@
                 hint_text: 'Username'
                 multiline: False
                 size_hint: None, None
-                size: 250, 30  # Set the size of the username input field
+                size: 230, 40  # Set the size of the username input field
                 pos_hint: {'center_x': 0.5}  # Center the username input horizontally
 
             TextInput:
@@ -53,15 +53,15 @@
                 password: True
                 multiline: False
                 size_hint: None, None
-                size: 250, 30  # Set the size of the password input field
+                size: 230, 40  # Set the size of the password input field
                 pos_hint: {'center_x': 0.5}  # Center the password input horizontally
             Button:
                 text: 'Login'
                 on_press: root.manager.current = 'main'
                 size_hint: None, None
-                size: 200, 30  # Set the size of the login button
+                size: 180, 40  # Set the size of the login button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
-                background_color: 0, 0, 128
+                background_color: 0, 0, 120
                 color: 1, 1, 1, 1  # White text color
         BoxLayout:
             orientation: 'vertical'
@@ -69,23 +69,24 @@
             height: -20
             Label:
                 text: "Doesn't book yet? book your appointment now!"
-                font_size: 14
+                font_size: 16
                 bold: True
                 size_hint_y: None
                 height: 50
+                color: 0, 0, 0, 1
             Button:
                 text: 'Book Appointment'
                 on_press: root.create_account()
                 size_hint: None, None
-                size: 150, 40  # Set the size of the create account button
+                size: 170, 50  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 3  # Green color
-                color: 0, 0, 0 # White text color
-            
+                color: 1 , 1 , 1 , 1  # White text color
+
 <CreateAccountScreen>:
     name: 'create_account'
     Image:
-        source: 'book.jpg'
+        source: 'try.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -97,13 +98,13 @@
         padding: [10, 30, 20, 30]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}  # Adjusted center_y to move it up
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
             height: 100
             Image:
-                source: 'HAPPY_KID-LOGO.png'
+                source: 'HKLOGO.png'
                 allow_stretch: True
                 keep_ratio: True
                 size_hint: (None, None)
@@ -143,14 +144,14 @@
                         id: full_name
                         multiline: False
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'horizontal'
                     spacing: 10
                     size_hint: (None, None)
-                    width: 200
+                    width: 400  # Adjusted width to match the form width
                     height: 30
                     pos_hint: {'center_x': 0.5}
                     BoxLayout:
@@ -164,13 +165,13 @@
                             size_hint_y: None
                             height: 15
                         TextInput:
-                            id: dob
+                            id: dateofbirth
                             hint_text: 'MM/DD/YYYY'
                             multiline: False
                             size_hint: (None, None)
-                            width: 150
+                            width: 140
                             height: 30
-                            pos_hint: {'center_x': 0.5}
+                            pos_hint: {'center_x': 0.6}
                     BoxLayout:
                         orientation: 'vertical'
                         size_hint: (None, None)
@@ -184,11 +185,11 @@
                         Spinner:
                             id: gender
                             text: 'Select'
-                            values: ('Male', 'Female', 'TARARIM', 'BADING', 'KALBO', 'ALDUB', 'MAONGGO')
+                            values: ('Male', 'Female',)
                             size_hint: (None, None)
-                            width: 165
-                            height: 30
-                            pos_hint: {'center_y': 0.5}
+                            width: 142
+                            height: 31
+                            pos_hint: {'center_y': 0.3}
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -199,12 +200,13 @@
                         color: 0, 0, 0, 1  # Black color
                         size_hint_y: None
                         height: 15
-                    TextInput:
+                    Spinner:
                         id: blank_question_2
-                        multiline: False
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -216,12 +218,13 @@
                         color: 0, 0, 0, 1  # Black color
                         size_hint_y: None
                         height: 15
-                    TextInput:
+                    Spinner:
                         id: blank_question_3
-                        multiline: False
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -233,12 +236,13 @@
                         color: 0, 0, 0, 1  # Black color
                         size_hint_y: None
                         height: 15
-                    TextInput:
+                    Spinner:
                         id: blank_question_4
-                        multiline: False
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -250,12 +254,13 @@
                         color: 0, 0, 0, 1  # Black color
                         size_hint_y: None
                         height: 15
-                    TextInput:
+                    Spinner:
                         id: blank_question_5
-                        multiline: False
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -267,12 +272,13 @@
                         color: 0, 0, 0, 1  # Black color
                         size_hint_y: None
                         height: 15
-                    TextInput:
+                    Spinner:
                         id: blank_question_6
-                        multiline: False
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
-                        width: 350
-                        height: 30
+                        width: 300
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -282,9 +288,9 @@
                         text: 'Next'
                         size_hint: (None, None)
                         width: 150
-                        height: 35
+                        height: 45
                         pos_hint: {'center_x': 0.5}
-                        background_color: 0, 2, 0, 2  # Green color
+                        background_color: 0, 3, 0, 2  # Green color
                         color: 0, 0, 0 
                         on_release:
                             app.root.current = 'create_account2'
@@ -293,12 +299,13 @@
                     size_hint_y: None
                     height: 0
                     Button:
-                        text: 'Back'
+                        text: 'back'
+                        font_size: 20
                         size_hint: (None, None)
                         width: 100
-                        height: 30
+                        height: 40
                         pos_hint: {'center_x': 0.5}
-                        background_color: 0, 2, 0, 2  # Green color
+                        background_color:  1, 6, 0, 1  # Green color
                         color: 0, 0, 0 
                         on_release:
                             app.root.current = 'login'
@@ -459,40 +466,101 @@
 
 <BookAppointment>:
     name: 'book_appointment_screen'
-    Image:
-        source: 'book.jpg'
-        allow_stretch: True
-        keep_ratio: False
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
     BoxLayout:
         orientation: 'vertical'
-        padding: [10, 30, 20, 30]  # Top, right, bottom, left
-        spacing: 10
-        size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 1}
+
+        # Header
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Label:
+                text: 'Welcome! (Student Name)'
+                size_hint_x: 0.7
+            Button:
+                text: 'Discover new updates'
+                size_hint_x: 0.3
+
+        # Class Info
+        Label:
+            text: 'Class Today! 3:30 PM – 5:30 PM'
+            size_hint_y: None
+            height: '40dp'
+
+        # Icons Row
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                background_normal: 'icon1.png'
+                size_hint_x: 0.2
+            Button:
+                background_normal: 'icon2.png'
+                size_hint_x: 0.2
+            Button:
+                background_normal: 'icon3.png'
+                size_hint_x: 0.2
+            Button:
+                background_normal: 'icon4.png'
+                size_hint_x: 0.2
+            Button:
+                background_normal: 'icon5.png'
+                size_hint_x: 0.2
+
+        # Content Layout
+        BoxLayout:
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'AT HOME ACTIVITY LIST'
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'PROGRESS'
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'ATTENDANCE'
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+        # Course Schedule
         BoxLayout:
             orientation: 'vertical'
-            size_hint_y: None
-            height: 10
             Label:
-                text: "PARA SAAN BA TO?"
-                font_size: 22
-                bold: True
-                color: 0, 0, 0, 1  # Black color
-                size_hint: (None, None)
-                height: 100
-                pos_hint: {'center_x': 0.5}
-                valign: 'middle'
-                halign: 'center'
-            GridLayout:
-                cols: 1
-                row_default_height: 50
-                row_force_default: True
-                spacing: 5
-                size_hint: (None, None)
-                width: 400
-                height: self.minimum_height
-                pos_hint: {'center_x': 0.5}
+                text: 'COURSE SCHEDULE'
+                size_hint_y: None
+                height: '30dp'
+            Label:
+                text: ''
+                size_hint_y: 1
+
+        # Bottom Navigation
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'
+            Button:
+                text: 'About Center'
+            Button:
+                text: 'Messages'
+            Button:
+                text: 'Notification'
+            Button:
+                text: 'Account'
