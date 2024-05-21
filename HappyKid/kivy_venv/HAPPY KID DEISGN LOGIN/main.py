@@ -3,7 +3,7 @@ from kivy.lang import Builder
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.core.window import Window
 
-Window.size = (420, 630)
+Window.size = (410, 680)
 
 class LoginScreen(Screen):
     def create_account(self):

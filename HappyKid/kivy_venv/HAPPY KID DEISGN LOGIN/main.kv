@@ -1,7 +1,7 @@
 <LoginScreen>:
     name: 'login'
     Image:
-        source: 'try.jpg'
+        source: 'bg1.png'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -66,10 +66,10 @@
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
-            height: -20
+            height: 10
             Label:
                 text: "Doesn't book yet? book your appointment now!"
-                font_size: 16
+                font_size: 13
                 bold: True
                 size_hint_y: None
                 height: 50
@@ -94,11 +94,11 @@
                 pos: self.pos
                 size: self.size
     BoxLayout:
-        orientation: 'vertical'
-        padding: [10, 30, 20, 30]  # Top, right, bottom, left
+        orientation: 'horizontal'
+        padding: [20, 30, 20, 30]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.4}  # Adjusted center_y to move it up
+        pos_hint: {'center_x': 0.5, 'center_y': 0.35}  # Adjusted center_y to move it up
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -109,7 +109,7 @@
                 keep_ratio: True
                 size_hint: (None, None)
                 width: 160
-                height: 80
+                height: 90
                 pos_hint: {'center_x': 0.5}
             Label:
                 text: "CONSULTATION FORM"
@@ -188,7 +188,7 @@
                             values: ('Male', 'Female',)
                             size_hint: (None, None)
                             width: 142
-                            height: 31
+                            height: 30
                             pos_hint: {'center_y': 0.3}
                 BoxLayout:
                     orientation: 'vertical'
@@ -206,7 +206,7 @@
                         values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
                         width: 300
-                        height: 40
+                        height: 30
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -224,7 +224,7 @@
                         values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
                         width: 300
-                        height: 40
+                        height: 30
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -242,7 +242,7 @@
                         values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
                         width: 300
-                        height: 40
+                        height: 30
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -260,7 +260,7 @@
                         values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
                         width: 300
-                        height: 40
+                        height: 30
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -278,7 +278,7 @@
                         values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
                         size_hint: (None, None)
                         width: 300
-                        height: 40
+                        height: 30
                         pos_hint: {'center_x': 0.5}
                 BoxLayout:
                     orientation: 'vertical'
@@ -288,7 +288,7 @@
                         text: 'Next'
                         size_hint: (None, None)
                         width: 150
-                        height: 45
+                        height: 40
                         pos_hint: {'center_x': 0.5}
                         background_color: 0, 3, 0, 2  # Green color
                         color: 0, 0, 0 
@@ -300,10 +300,10 @@
                     height: 0
                     Button:
                         text: 'back'
-                        font_size: 20
+                        font_size: 15
                         size_hint: (None, None)
                         width: 100
-                        height: 40
+                        height: 35
                         pos_hint: {'center_x': 0.5}
                         background_color:  1, 6, 0, 1  # Green color
                         color: 0, 0, 0 
@@ -314,7 +314,7 @@
 <CreateAccountScreen2>:
     name: 'create_account2'
     Image:
-        source: 'book.jpg'
+        source: 'try.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -359,9 +359,9 @@
                 Spinner:
                     id: gender
                     text: 'Select'
-                    values: ('Archie', 'Archie2', 'Archie3', 'Archie4', 'Archie5')
+                    values: ('Option 1', 'Option 2', 'Option 3') 
                     size_hint: (None, None)
-                    width: 350
+                    width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
             BoxLayout:
@@ -377,9 +377,9 @@
                 Spinner:
                     id: gender
                     text: 'Select'
-                    values: ('Archie', 'Archie2', 'Archie3', 'Archie4', 'Archie5')
+                    values: ('Option 1', 'Option 2', 'Option 3') 
                     size_hint: (None, None)
-                    width: 350
+                    width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
             BoxLayout:
@@ -395,9 +395,9 @@
                 Spinner:
                     id: gender
                     text: 'Select'
-                    values: ('Archie', 'Archie2', 'Archie3', 'Archie4', 'Archie5')
+                    values: ('Option 1', 'Option 2', 'Option 3') 
                     size_hint: (None, None)
-                    width: 350
+                    width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
             BoxLayout:
@@ -413,9 +413,9 @@
                 Spinner:
                     id: gender
                     text: 'Select'
-                    values: ('Archie', 'Archie2', 'Archie3', 'Archie4', 'Archie5')
+                    values: ('Option 1', 'Option 2', 'Option 3') 
                     size_hint: (None, None)
-                    width: 350
+                    width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
             BoxLayout:
@@ -431,9 +431,9 @@
                 Spinner:
                     id: gender
                     text: 'Select'
-                    values: ('Archie', 'Archie2', 'Archie3', 'Archie4', 'Archie5')
+                    values: ('Option 1', 'Option 2', 'Option 3') 
                     size_hint: (None, None)
-                    width: 350
+                    width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
             BoxLayout:
@@ -466,6 +466,14 @@
 
 <BookAppointment>:
     name: 'book_appointment_screen'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
     BoxLayout:
         orientation: 'vertical'
 
@@ -475,14 +483,17 @@
             height: '50dp'
             Label:
                 text: 'Welcome! (Student Name)'
+                color: 0, 0, 0
                 size_hint_x: 0.7
             Button:
                 text: 'Discover new updates'
-                size_hint_x: 0.3
+                font_size: 13
+                size_hint_x: 0.5
 
         # Class Info
         Label:
             text: 'Class Today! 3:30 PM – 5:30 PM'
+            color: 0, 0, 0
             size_hint_y: None
             height: '40dp'
 
@@ -491,28 +502,24 @@
             size_hint_y: None
             height: '50dp'
             Button:
-                background_normal: 'icon1.png'
+                color: 0, 0, 0
                 size_hint_x: 0.2
             Button:
-                background_normal: 'icon2.png'
+                color: 0, 0, 0
                 size_hint_x: 0.2
             Button:
-                background_normal: 'icon3.png'
+                color: 0, 0, 0
                 size_hint_x: 0.2
-            Button:
-                background_normal: 'icon4.png'
-                size_hint_x: 0.2
-            Button:
-                background_normal: 'icon5.png'
-                size_hint_x: 0.2
-
+        
         # Content Layout
         BoxLayout:
 
             BoxLayout:
                 orientation: 'vertical'
                 Label:
-                    text: 'AT HOME ACTIVITY LIST'
+                    text: 'HOME ACTIVITY'
+                    color: 0, 0, 0
+                    font_size: 13
                     size_hint_y: None
                     height: '30dp'
                 Label:
@@ -523,6 +530,8 @@
                 orientation: 'vertical'
                 Label:
                     text: 'PROGRESS'
+                    color: 0, 0, 0
+                    font_size: 13
                     size_hint_y: None
                     height: '30dp'
                 Label:
@@ -533,6 +542,8 @@
                 orientation: 'vertical'
                 Label:
                     text: 'ATTENDANCE'
+                    color: 0, 0, 0
+                    font_size: 13
                     size_hint_y: None
                     height: '30dp'
                 Label:
@@ -544,6 +555,8 @@
             orientation: 'vertical'
             Label:
                 text: 'COURSE SCHEDULE'
+                font_size: 30
+                color: 0, 0, 0
                 size_hint_y: None
                 height: '30dp'
             Label:
@@ -555,12 +568,22 @@
             size_hint_y: None
             height: '50dp'
             Button:
-                text: 'Dashboard'
+                text: 'Dashboard'  
+                font_size: 12         
+                height: 50
             Button:
                 text: 'About Center'
-            Button:
-                text: 'Messages'
+                font_size: 12
+                height: 50
             Button:
                 text: 'Notification'
+                font_size: 12
+                height: 50
+            Button:
+                text: 'Messages'
+                font_size: 12
+                height: 50
             Button:
                 text: 'Account'
+                font_size: 12
+                height: 50
