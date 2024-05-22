@@ -1,0 +1,33 @@
+<LoginScreen>:
+    layout: BoxLayout
+    GridLayout:
+        id: login_container
+        cols: 1
+        spacing: 10
+        size_hint_y: None
+        height: self.minimum_height
+        Label:
+            text: "HAPPY KID"
+            size_hint_y: None
+            height: 100
+        TextInput:
+            id: username_input
+            hint_text: "Username"
+            size_hint_y: None
+            height: 40
+        TextInput:
+            id: password_input
+            hint_text: "Password"
+            password: True
+            size_hint_y: None
+            height: 40
+        Button:
+            text: "Log In"
+            on_press: root.proceed(self)
+            size_hint_y: None
+            height: 40
+        Button:
+            text: "Create Account"
+            on_press: root.create_account(self)
+            size_hint_y: None
+            height: 40
