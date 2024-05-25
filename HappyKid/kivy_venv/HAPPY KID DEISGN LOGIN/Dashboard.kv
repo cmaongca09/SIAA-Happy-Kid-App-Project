@@ -1,0 +1,127 @@
+<DashboardTab>:
+    name: 'dashboard_screen'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Header
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Label:
+                text: 'Welcome! (Student Name)'
+                color: 0, 0, 0
+                size_hint_x: 0.7
+            Button:
+                text: 'Discover new updates'
+                font_size: 13
+                size_hint_x: 0.5
+
+        # Class Info
+        Label:
+            text: 'Class Today! 3:30 PM – 5:30 PM'
+            color: 0, 0, 0
+            size_hint_y: None
+            height: '40dp'
+
+        # Icons Row
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                color: 0, 0, 0
+                size_hint_x: 0.2
+            Button:
+                color: 0, 0, 0
+                size_hint_x: 0.2
+            Button:
+                color: 0, 0, 0
+                size_hint_x: 0.2
+        
+        # Content Layout
+        BoxLayout:
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'HOME ACTIVITY'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'PROGRESS'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'ATTENDANCE'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+        # Course Schedule
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'COURSE SCHEDULE'
+                font_size: 30
+                color: 0, 0, 0
+                size_hint_y: None
+                height: '30dp'
+            Label:
+                text: ''
+                size_hint_y: 1
+
+        # Bottom Navigation
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 12         
+                height: 50
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 12
+                height: 50
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 12
+                height: 50
+            Button:
+                text: 'Messages'
+                font_size: 12
+                height: 50
+            Button:
+                text: 'Account'
+                font_size: 12
+                height: 50

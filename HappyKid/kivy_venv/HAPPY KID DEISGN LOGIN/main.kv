@@ -98,7 +98,7 @@
         padding: [20, 30, 20, 30]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.35}  # Adjusted center_y to move it up
+        pos_hint: {'center_x': 0.5, 'center_y': 0.55}  # Adjusted center_y to move it up
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -190,6 +190,7 @@
                             width: 142
                             height: 30
                             pos_hint: {'center_y': 0.3}
+                            background_color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -208,6 +209,7 @@
                         width: 300
                         height: 30
                         pos_hint: {'center_x': 0.5}
+                        color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -226,6 +228,7 @@
                         width: 300
                         height: 30
                         pos_hint: {'center_x': 0.5}
+                        color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -244,6 +247,7 @@
                         width: 300
                         height: 30
                         pos_hint: {'center_x': 0.5}
+                        color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -262,6 +266,7 @@
                         width: 300
                         height: 30
                         pos_hint: {'center_x': 0.5}
+                        color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -280,6 +285,7 @@
                         width: 300
                         height: 30
                         pos_hint: {'center_x': 0.5}
+                        color: 1, 1, 1, 1
                 BoxLayout:
                     orientation: 'vertical'
                     size_hint_y: None
@@ -326,7 +332,7 @@
         padding: [100, 50, 100, 50]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         Label:
             text: "CONSULTATION FORM"
             font_size: 22
@@ -443,8 +449,8 @@
                 Button:
                     text: 'Confirm Information'
                     size_hint: (None, None)
-                    width: 150
-                    height: 35
+                    width: 180
+                    height: 45
                     pos_hint: {'center_x': 0.5}
                     background_color: 0, 2, 0, 2  # Green color
                     color: 0, 0, 0 
@@ -583,20 +589,14 @@
                 text: 'Notification'
                 font_size: 12
                 height: 50
-                on_release:
-                    app.root.current = 'notification_tab'
             Button:
                 text: 'Messages'
                 font_size: 12
                 height: 50
-                on_release:
-                    app.root.current = 'messages_tab'
             Button:
                 text: 'Account'
                 font_size: 12
                 height: 50
-                on_release:
-                    app.root.current = 'account_tab'
 
 <AboutCenterTab>:
     name: 'about_center_tab'
@@ -614,41 +614,8 @@
             text: 'ABOUT CENTER'
             color: 0, 0, 0
             size_hint_x: 1
-        BoxLayout:
-            size_hint_y: None
-            height: '50dp'
-            Button:
-                text: 'Dashboard'  
-                font_size: 12         
-                height: 50
-                on_release:
-                    app.root.current = 'dashboard_tab'
-            Button:
-                text: 'About Center'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'about_center_tab'
-            Button:
-                text: 'Notification'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'notification_tab'
-            Button:
-                text: 'Messages'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'messages_tab'
-            Button:
-                text: 'Account'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'account_tab'
 
-<NotificationTab>:
+<Notificationtab>:
     name: 'notification_tab'
     Image:
         source: 'book.jpg'
@@ -661,139 +628,6 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
-            text: 'NOTIFICATION'
+            text: 'ABOUT CENTER'
             color: 0, 0, 0
             size_hint_x: 1
-        BoxLayout:
-            size_hint_y: None
-            height: '50dp'
-            Button:
-                text: 'Dashboard'  
-                font_size: 12         
-                height: 50
-                on_release:
-                    app.root.current = 'dashboard_tab'
-            Button:
-                text: 'About Center'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'about_center_tab'
-            Button:
-                text: 'Notification'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'notification_tab'
-            Button:
-                text: 'Messages'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'messages_tab'
-            Button:
-                text: 'Account'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'account_tab'
-
-<MessagesTab>:
-    name: 'messages_tab'
-    Image:
-        source: 'book.jpg'
-        allow_stretch: True
-        keep_ratio: False
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'MESSAGES'
-            color: 0, 0, 0
-            size_hint_x: 1
-        BoxLayout:
-            size_hint_y: None
-            height: '50dp'
-            Button:
-                text: 'Dashboard'  
-                font_size: 12         
-                height: 50
-                on_release:
-                    app.root.current = 'dashboard_tab'
-            Button:
-                text: 'About Center'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'about_center_tab'
-            Button:
-                text: 'Notification'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'notification_tab'
-            Button:
-                text: 'Messages'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'messages_tab'
-            Button:
-                text: 'Account'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'account_tab'
-
-<AccountTab>:
-    name: 'account_tab'
-    Image:
-        source: 'book.jpg'
-        allow_stretch: True
-        keep_ratio: False
-        canvas.before:
-            Rectangle:
-                pos: self.pos
-                size: self.size
-    BoxLayout:
-        orientation: 'vertical'
-        Label:
-            text: 'ACCOUNT'
-            color: 0, 0, 0
-            size_hint_x: 1
-        BoxLayout:
-            size_hint_y: None
-            height: '50dp'
-            Button:
-                text: 'Dashboard'  
-                font_size: 12         
-                height: 50
-                on_release:
-                    app.root.current = 'dashboard_tab'
-            Button:
-                text: 'About Center'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'about_center_tab'
-            Button:
-                text: 'Notification'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'notification_tab'
-            Button:
-                text: 'Messages'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'messages_tab'
-            Button:
-                text: 'Account'
-                font_size: 12
-                height: 50
-                on_release:
-                    app.root.current = 'account_tab'

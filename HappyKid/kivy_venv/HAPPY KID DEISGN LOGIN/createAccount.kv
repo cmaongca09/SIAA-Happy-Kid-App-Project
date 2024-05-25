@@ -1,0 +1,227 @@
+<CreateAccountScreen>:
+    name: 'create_account'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'horizontal'
+        padding: [20, 30, 20, 30]  # Top, right, bottom, left
+        spacing: 10
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.35}  # Adjusted center_y to move it up
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 100
+            Image:
+                source: 'HKLOGO.png'
+                allow_stretch: True
+                keep_ratio: True
+                size_hint: (None, None)
+                width: 160
+                height: 90
+                pos_hint: {'center_x': 0.5}
+            Label:
+                text: "CONSULTATION FORM"
+                font_size: 22
+                bold: True
+                color: 0, 0, 0, 1  # Black color
+                size_hint: (None, None)
+                height: 30
+                pos_hint: {'center_x': 0.5}
+                valign: 'middle'
+                halign: 'center'
+            GridLayout:
+                cols: 1
+                row_default_height: 50
+                row_force_default: True
+                spacing: 5
+                size_hint: (None, None)
+                width: 400
+                height: self.minimum_height
+                pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: "Client's Full Name (Student Enrollee)"
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 20
+                    TextInput:
+                        id: full_name
+                        multiline: False
+                        size_hint: (None, None)
+                        width: 300
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'horizontal'
+                    spacing: 10
+                    size_hint: (None, None)
+                    width: 400  # Adjusted width to match the form width
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 200
+                        Label:
+                            text: 'Date of Birth'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        TextInput:
+                            id: dateofbirth
+                            hint_text: 'MM/DD/YYYY'
+                            multiline: False
+                            size_hint: (None, None)
+                            width: 140
+                            height: 30
+                            pos_hint: {'center_x': 0.6}
+                    BoxLayout:
+                        orientation: 'vertical'
+                        size_hint: (None, None)
+                        width: 200
+                        Label:
+                            text: 'Gender'
+                            font_size: 12
+                            color: 0, 0, 0, 1  # Black color
+                            size_hint_y: None
+                            height: 15
+                        Spinner:
+                            id: gender
+                            text: 'Select'
+                            values: ('Male', 'Female',)
+                            size_hint: (None, None)
+                            width: 142
+                            height: 30
+                            pos_hint: {'center_y': 0.3}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    Spinner:
+                        id: blank_question_2
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
+                        size_hint: (None, None)
+                        width: 300
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    Spinner:
+                        id: blank_question_3
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
+                        size_hint: (None, None)
+                        width: 300
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    Spinner:
+                        id: blank_question_4
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
+                        size_hint: (None, None)
+                        width: 300
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    Spinner:
+                        id: blank_question_5
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
+                        size_hint: (None, None)
+                        width: 300
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 70
+                    Label:
+                        text: 'BLANK QUESTION'
+                        font_size: 12
+                        color: 0, 0, 0, 1  # Black color
+                        size_hint_y: None
+                        height: 15
+                    Spinner:
+                        id: blank_question_6
+                        text: 'Select'
+                        values: ('Option 1', 'Option 2', 'Option 3')  # Example values, replace with actual
+                        size_hint: (None, None)
+                        width: 300
+                        height: 30
+                        pos_hint: {'center_x': 0.5}
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 0
+                    Button:
+                        text: 'Next'
+                        size_hint: (None, None)
+                        width: 150
+                        height: 40
+                        pos_hint: {'center_x': 0.5}
+                        background_color: 0, 3, 0, 2  # Green color
+                        color: 0, 0, 0 
+                        on_release:
+                            app.root.current = 'create_account2'
+                BoxLayout:
+                    orientation: 'vertical'
+                    size_hint_y: None
+                    height: 0
+                    Button:
+                        text: 'back'
+                        font_size: 15
+                        size_hint: (None, None)
+                        width: 100
+                        height: 35
+                        pos_hint: {'center_x': 0.5}
+                        background_color:  1, 6, 0, 1  # Green color
+                        color: 0, 0, 0 
+                        on_release:
+                                # app.root.current = 'login'
+                                    
