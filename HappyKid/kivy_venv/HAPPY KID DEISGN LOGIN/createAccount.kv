@@ -1,3 +1,5 @@
+#:kivy 2.3.0
+
 <CreateAccountScreen>:
     name: 'create_account'
     Image:
@@ -13,7 +15,7 @@
         padding: [20, 30, 20, 30]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.35}  # Adjusted center_y to move it up
+        pos_hint: {'center_x': 0.5, 'center_y': 0.33}  # Adjusted center_y to move it up
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -223,5 +225,4 @@
                         background_color:  1, 6, 0, 1  # Green color
                         color: 0, 0, 0 
                         on_release:
-                                # app.root.current = 'login'
-                                    
+                            app.root.current = 'login'

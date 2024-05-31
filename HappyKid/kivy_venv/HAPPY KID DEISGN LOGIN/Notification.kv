@@ -1,0 +1,51 @@
+#:kivy 2.3.0
+
+<NotificationTab>:
+    name: 'notification_tab'
+    Image:
+        source: 'book.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'NOTIFICATION'
+            color: 0, 0, 0
+            size_hint_x: 1
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11         
+                height: 50
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                on_release:
+                    app.root.current = 'account_tab'
