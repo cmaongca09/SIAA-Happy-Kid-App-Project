@@ -100,7 +100,7 @@
         padding: [20, 30, 20, 30]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.33}  # Adjusted center_y to move it up
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Adjusted center_y to move it up
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -312,7 +312,6 @@
                         on_release:
                             app.root.current = 'login'
                 
-
 <CreateAccountScreen2>:
     name: 'create_account2'
     Image:
@@ -328,7 +327,7 @@
         padding: [100, 50, 100, 50]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.3}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
         Label:
             text: "CONSULTATION FORM"
             font_size: 22
@@ -353,15 +352,13 @@
                 size_hint_y: None
                 height: 70
                 Label:
-                    text: 'BLANK QUESTION'
+                    text: 'Select Appointment Date'
                     font_size: 12
                     color: 0, 0, 0, 1  # Black color
                     size_hint_y: None
                     height: 15
-                Spinner:
-                    id: gender
-                    text: 'Select'
-                    values: ('Option 1', 'Option 2', 'Option 3') 
+                DatePicker:
+                    id: date_picker
                     size_hint: (None, None)
                     width: 300
                     height: 30
@@ -371,105 +368,18 @@
                 size_hint_y: None
                 height: 70
                 Label:
-                    text: 'BLANK QUESTION'
+                    text: 'Select Time Slot'
                     font_size: 12
                     color: 0, 0, 0, 1  # Black color
-                    size_hint_y: None
-                    height: 15
                 Spinner:
-                    id: gender
+                    id: time_slot
                     text: 'Select'
-                    values: ('Option 1', 'Option 2', 'Option 3') 
-                    size_hint: (None, None)
-                    width: 300
-                    height: 30
-                    pos_hint: {'center_x': 0.5}
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                height: 70
-                Label:
-                    text: 'BLANK QUESTION'
-                    font_size: 12
-                    color: 0, 0, 0, 1  # Black color
-                    size_hint_y: None
-                    height: 15
-                Spinner:
-                    id: gender
-                    text: 'Select'
-                    values: ('Option 1', 'Option 2', 'Option 3') 
-                    size_hint: (None, None)
-                    width: 300
-                    height: 30
-                    pos_hint: {'center_x': 0.5}
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                height: 70
-                Label:
-                    text: 'BLANK QUESTION'
-                    font_size: 12
-                    color: 0, 0, 0, 1  # Black color
-                    size_hint_y: None
-                    height: 15
-                Spinner:
-                    id: gender
-                    text: 'Select'
-                    values: ('Option 1', 'Option 2', 'Option 3') 
-                    size_hint: (None, None)
-                    width: 300
-                    height: 30
-                    pos_hint: {'center_x': 0.5}
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                height: 70
-                Label:
-                    text: 'BLANK QUESTION'
-                    font_size: 12
-                    color: 0, 0, 0, 1  # Black color
-                    size_hint_y: None
-                    height: 15
-                Spinner:
-                    id: gender
-                    text: 'Select'
-                    values: ('Option 1', 'Option 2', 'Option 3') 
-                    size_hint: (None, None)
-                    width: 300
-                    height: 30
-                    pos_hint: {'center_x': 0.5}
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                height: 70
-                Button:
-                    text: 'Confirm Information'
-                    size_hint: (None, None)
-                    width: 150
-                    height: 35
-                    pos_hint: {'center_x': 0.5}
-                    background_color: 0, 2, 0, 2  # Green color
-                    color: 0, 0, 0 
-                    on_release:
-                        app.root.current = 'dashboard_tab'
-            BoxLayout:
-                orientation: 'vertical'
-                size_hint_y: None
-                Button:
-                    text: 'Back'
-                    size_hint: (None, None)
-                    width: 100
-                    height: 30
-                    pos_hint: {'center_x': 0.5}
-                    background_color: 0, 2, 0, 2  # Green color
-                    color: 0, 0, 0 
-                    on_release:
-                        app.root.current = 'create_account'
+                    values: ('09:00 AM - 10:00 AM', '10:00 AM - 11:00 AM', '11:00 AM - 12:00 PM', '01:00 PM - 02:00 PM', '02:00 PM - 03:00 PM')
 
 <DashboardTab>:
     name: 'dashboard_screen'
     Image:
-        source: 'book.jpg'
+        source: 'try.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
