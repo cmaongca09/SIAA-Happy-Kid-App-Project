@@ -1,11 +1,221 @@
-MDFloatLayout:
+<HappyKidCenterLayout>:
+    orientation: 'vertical'
+    padding: 20
+    spacing: 10
 
-	MDRaisedButton:
-		text: "Open Date Picker"
-		pos_hint: {'center_x': .5, 'center_y': .5}
-		on_release: app.show_date_picker()
+    canvas.before:
+        Color:
+            rgba: 1, 1, 1, 1  # White color
+        Rectangle:
+            pos: self.pos
+            size: self.size
 
-	MDLabel:
-		id: date_label
-		text: "Some Stuff!"
-		pos_hint: {'center_x': .95, 'center_y': .4}
+    Label:
+        text: 'HAPPY KID CENTER\n12 YEARS IN SERVICE'
+        font_size: '24sp'
+        halign: 'center'
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: self.minimum_height
+        spacing: 5
+        padding: [0, 20]
+
+        Label:
+            text: "1. STRICTLY NO WALK IN POLICY"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "2. We accept children with:"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Speech delay"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Autism Spectrum Disorder"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Global Developmental Delay"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Slow Learner"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Hyperactive"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• ADHD"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Intellectual Disability"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "Therapy Fees Information"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: '18sp'
+            halign: 'center'
+
+        Label:
+            text: "P2,000 Initial Assessment – This is to assess the main issue of the child’s delay that can be used for our treatment planning)"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "P3,000 Deposit – Purpose of Deposit:"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Absences without notifying us, is considered deduction of Therapy Fee on you Deposit"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Absences requires make up session"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Minimum of 6 Months (Unless the doctor will give you a specific number of months of therapy then we will allow short term therapy)"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Non Refundable as cash but can be consumed thru Therapy Sessions (With min. stay of 6 Months)"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "BEHAVIORAL INTERVENTION"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• P500 per hour"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "SPEECH PROGRAM"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• P500 per hour"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "Steps to secure a slot for Assessment"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: '18sp'
+            halign: 'center'
+
+        Label:
+            text: "• Pay P500 to Reserve a slot for Assessment (Non Refundable for any reason including Change of Schedule)"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Fill out the Appointment Form for the client information."
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Available schedule will appear as soon as you complete the 2 step."
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Remaining P1500 should be paid after the initial assessment."
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "Branches of Happy Kid Center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: '18sp'
+            halign: 'center'
+
+        Label:
+            text: "• Urdaneta, Pangasinan"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
+
+        Label:
+            text: "• Lingayen, Pangasinan"
+            size_hint_y: None
+            height: self.texture_size[1]
+            font_size: 12
+            halign: 'center'
