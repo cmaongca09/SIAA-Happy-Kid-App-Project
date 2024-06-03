@@ -8,12 +8,9 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.button import Button
 from kivy.uix.label import Label
 from kivy.uix.floatlayout import FloatLayout
-from kivy.uix.popup import Popup
-from kivy.uix.boxlayout import BoxLayout
-import mysql.connector
 import calendar
 from datetime import datetime
-
+import mysql.connector
 
 Window.size = (380, 650)
 
@@ -107,20 +104,19 @@ class LoginScreen(Screen):
                     AdminPassword = str(row[2])
 
                     print(AdminID)
+                    print("DB Username:", AdminUser)
+                    print("DB Password:", AdminPassword)
+
+                    print("Input Username:", username_input)
+                    print("Input Password:", password_input)
 
                     if username_input == AdminUser and password_input == AdminPassword:
-                        return self.LogInSuccessful()
-                    
-                elif username_input == "" or password_input == "":
-                    error_popup = ErrorPopup(error_message="Please Put your Username and Password!")
-                    error_popup.open()
+                        print("okay na maongca?")
+                    else:
+                        print("nah Id win")
 
                 else:
-                    error_popup = ErrorPopup(error_message="Invalid username or password!")
-                    error_popup.open()
-                    self.ids.username.text = ""
-                    self.ids.password.text = ""
-
+                    print("it didnt work, gowd fucking damn it")
 
         except mysql.connector.Error as e:
             print(f"Error connecting to MySQL database: {e}")
@@ -129,27 +125,6 @@ class LoginScreen(Screen):
             if 'connection' in locals():
                 connection.close()
                 print("MySQL connection closed")
-    
-    def LogInSuccessful(self):
-        self.manager.current = 'dashboard_tab'            
-
-class ErrorPopup(Popup):
-    def __init__(self, error_message, **kwargs):
-        super(ErrorPopup, self).__init__(**kwargs)
-        self.title = 'Error'
-        self.size_hint = (None, None)
-        self.size = (300, 200)
-
-        content = Label(text=error_message, size_hint_y=None, height=50)
-        btn = BoxLayout(orientation='vertical')
-        btn.add_widget(content)
-
-        close_button = Button(text='Close', size_hint=(1, None), height=50)
-        close_button.bind(on_press=self.dismiss)
-        btn.add_widget(close_button)
-
-        self.content = btn
-
 
 class CreateAccountScreen(Screen):
     pass
@@ -211,4 +186,3 @@ if __name__ == '__main__':
     Builder.load_file("termsandcondition.kv")
 
     TestApp().run()
-
