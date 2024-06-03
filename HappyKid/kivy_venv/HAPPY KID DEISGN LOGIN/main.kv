@@ -23,7 +23,7 @@
                 allow_stretch: True
                 keep_ratio: False
                 size_hint: None, None
-                size: 260,210  # Set the size of the image
+                size: 260, 210  # Set the size of the image
                 pos_hint: {'center_x': 0.5}  # Center the image horizontally
                 canvas.before:
                     PushMatrix
@@ -76,19 +76,9 @@
                 color: 0, 0, 0, 1
             Button:
                 text: 'Book Appointment'
-                on_press: root.create_account()
+                on_press: app.root.current = 'termsConditionTab'  # Navigate to termsConditionTab
                 size_hint: None, None
                 size: 170, 50  # Set the size of the create account button
                 pos_hint: {'center_x': 0.5}  # Center the button horizontally
                 background_color: 0, 2, 0, 3  # Green color
                 color: 1 , 1 , 1 , 1  # White text color
-
-# File: information.kv
-
-<InformationScreen>:
-    Label:
-        text: 'Information Screen'
-    Button:
-        text: 'Back to Login'
-        on_release: app.sm.current = 'login'
-

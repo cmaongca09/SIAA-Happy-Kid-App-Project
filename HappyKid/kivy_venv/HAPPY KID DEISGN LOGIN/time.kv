@@ -1,8 +1,56 @@
-<WhiteBoxLayout>:
+<ScrollableBox>:
+    name: 'skrol'
     orientation: 'vertical'
-    canvas.before:
-        Color:
-            rgba: 1, 1, 1, 1  # white color
-        Rectangle:
-            pos: self.center_x - 100, self.center_y - 100  # center the rectangle
-            size: 200, 200
+    BoxLayout:
+        size_hint_y: None
+        height: 20
+        Label:
+            text: 'Scroll'
+            size_hint_x: None
+            width: 50
+        ScrollView:
+            size_hint_x: None
+            width: 250  # Adjust width as needed
+            scroll_type: ['bars']
+            bar_width: 10
+            scroll_wheel_distance: 50
+            BoxLayout:
+                id: scroll_box
+                orientation: 'horizontal'
+                size_hint: None, None
+                width: self.minimum_width
+                height: 20
+                Label:
+                    text: 'Scroll'
+                Slider:
+                    id: scroll_slider
+                    orientation: 'horizontal'
+                    min: 0
+                    max: 1  # Set the max value according to your content width
+                    value: 0
+                    on_value: root.scroll_content(self.value)
+    BoxLayout:
+        size_hint_y: None
+        height: 400
+        canvas:
+            Color:
+                rgb: 0.7, 0.7, 0.7
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        ScrollView:
+            size_hint: (1, None)
+            height: 400
+            scroll_type: ['bars', 'content']
+            bar_width: 10
+            scroll_x: scroll_slider.value  # Bind the scroll position to the slider value
+            BoxLayout:
+                id: box
+                size_hint_x: None
+                width: 600  # Width of the content, adjust as needed
+                canvas:
+                    Color:
+                        rgb: 1, 1, 1
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size

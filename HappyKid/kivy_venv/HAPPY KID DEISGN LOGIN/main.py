@@ -28,7 +28,6 @@ class DatePicker(TextInput):
         else:
             self.parent.parent.disabled = False
 
-
 class DatePickerPopup(Popup):
     def __init__(self, parent, **kwargs):
         super(DatePickerPopup, self).__init__(**kwargs)
@@ -66,8 +65,6 @@ class DatePickerPopup(Popup):
             f"{datetime.now().year}-{datetime.now().month}-{instance.text}", '%Y-%m-%d')
         self.parent_widget.text = selected_date.strftime('%Y-%m-%d')
         self.dismiss()
-
-
 
 class LoginScreen(Screen):
     def create_account(self):
@@ -153,6 +150,9 @@ class AccountTab(Screen):
 class InformationScreen(Screen):
     pass
 
+class TermsAndConditionTab(Screen):
+    pass
+
 class TestApp(App):
     def build(self):
         self.sm = ScreenManager()
@@ -165,6 +165,7 @@ class TestApp(App):
         self.messages_tab = MessagesTab(name='messages_tab')
         self.account_tab = AccountTab(name='account_tab')
         self.information_screen = InformationScreen(name='information_screen')
+        self.terms_and_condition_tab = TermsAndConditionTab(name="termsConditionTab")
         self.sm.add_widget(self.login_screen)
         self.sm.add_widget(self.create_account_screen)
         self.sm.add_widget(self.create_account_screen2)
@@ -173,17 +174,15 @@ class TestApp(App):
         self.sm.add_widget(self.notification_tab)
         self.sm.add_widget(self.messages_tab)
         self.sm.add_widget(self.account_tab)
-        self.sm.add_widget(self.information_screen) # Add Information Screen
+        self.sm.add_widget(self.information_screen)  # Add Information Screen
+        self.sm.add_widget(self.terms_and_condition_tab)
         return self.sm
 
 if __name__ == '__main__':
     Builder.load_file("main.kv")
     Builder.load_file("createAccount.kv")
     Builder.load_file("createAccount2.kv")
-    Builder.load_file("Notification.kv")
     Builder.load_file("Dashboard.kv")
-    Builder.load_file("AboutCenter.kv")
-    Builder.load_file("Message.kv")
-    Builder.load_file("Notification.kv")
-    
+    Builder.load_file("termsandcondition.kv")
+
     TestApp().run()
