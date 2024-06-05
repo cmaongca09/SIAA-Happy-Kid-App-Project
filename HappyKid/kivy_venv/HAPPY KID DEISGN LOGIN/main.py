@@ -81,14 +81,6 @@ class DatePickerPopup(Popup):
         self.parent_widget.text = selected_date.strftime('%Y-%m-%d')
         self.dismiss()
 
-        popup = Popup(
-            size_hint=(0.9, 0.9),
-            background='try.jpg',
-            background_color=(1, 1, 1, 1),
-            title_color=(0, 0, 0, 1),
-        )
-        popup.open()
-
 
 class LoginScreen(Screen):
     def create_account(self):

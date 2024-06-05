@@ -2,8 +2,8 @@
     name: 'termsConditionTab'
     Image:
         source: 'try.jpg'
-        size_hint: 1, 1  # Take the full size of the parent widget
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}  # Center the image
+        allow_stretch: True
+        keep_ratio: False
         canvas.before:
             Rectangle:
                 pos: self.pos
@@ -17,6 +17,7 @@
         background_color: 0, 3, 0, 2  # Green color
         color: 0, 0, 0 
         on_release: app.show_terms_popup()
+        
 
     BoxLayout:
         orientation: 'vertical'
