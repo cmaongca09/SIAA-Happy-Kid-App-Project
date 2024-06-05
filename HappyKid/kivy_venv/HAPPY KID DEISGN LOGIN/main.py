@@ -12,14 +12,6 @@ from kivy.uix.scrollview import ScrollView
 from kivy.uix.textinput import TextInput
 from kivy.uix.screenmanager import NoTransition
 from kivy.clock import Clock
-import mysql.connector
-import os
-import sys
-from datetime import datetime
-import calendar
-
-Window.size = (380, 650)
-
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
 from kivy.uix.button import Button
@@ -27,10 +19,15 @@ from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
 from datetime import datetime
+
 import calendar
+import mysql.connector
+import calendar
+import os
+import sys
 
 
-
+Window.size = (380, 650)
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
