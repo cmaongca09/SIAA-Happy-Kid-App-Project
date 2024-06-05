@@ -1,0 +1,84 @@
+<LoginScreen>:
+    name: 'login'
+    Image:
+        source: 'bg1.png'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    GridLayout:
+        cols: 1
+        rows: 4
+        padding: 10
+        spacing: 50
+        size: root.width, root.height
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 280  # Increased height to give more space above the inputs
+            Image:
+                source: 'HKLOGO.png'
+                allow_stretch: True
+                keep_ratio: False
+                size_hint: None, None
+                size: 260, 210  # Set the size of the image
+                pos_hint: {'center_x': 0.5}  # Center the image horizontally
+                canvas.before:
+                    PushMatrix
+                    Rotate:
+                        angle: 360  # Rotate the image by 360 degrees
+                        axis: 0, 0, 2  # Rotate around the z-axis
+                        origin: self.center  # Rotate around the center of the image
+                canvas.after:
+                    PopMatrix
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 170
+            padding: 90
+            spacing: 10
+            TextInput:
+                id: username
+                hint_text: 'Username'
+                multiline: False
+                size_hint: None, None
+                size: 230, 40  # Set the size of the username input field
+                pos_hint: {'center_x': 0.5}  # Center the username input horizontally
+
+            TextInput:
+                id: password
+                hint_text: 'Password'
+                password: True
+                multiline: False
+                size_hint: None, None
+                size: 230, 40  # Set the size of the password input field
+                pos_hint: {'center_x': 0.5}  # Center the password input horizontally
+            Button:
+                text: 'Login'
+                on_press: root.LogInPress()
+                size_hint: None, None
+                size: 180, 40  # Set the size of the login button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+                background_color: 0, 0, 120
+                color: 1, 1, 1, 1  # White text color
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 10
+            Label:
+                text: "Doesn't book yet? book your appointment now!"
+                font_size: 13
+                bold: True
+                size_hint_y: None
+                height: 50
+                color: 0, 0, 0, 1
+            Button:
+                text: 'Book Appointment'
+                on_press: app.root.current = 'termsConditionTab'  # Navigate to termsConditionTab
+                size_hint: None, None
+                size: 170, 50  # Set the size of the create account button
+                pos_hint: {'center_x': 0.5}  # Center the button horizontally
+                background_color: 0, 2, 0, 3  # Green color
+                color: 1 , 1 , 1 , 1  # White text color

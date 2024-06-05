@@ -1,0 +1,401 @@
+<DashboardTab>:
+    name: 'dashboard_tab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+
+        # Class Info
+        Label:
+            text: 'Class Today! 3:30 PM – 5:30 PM'
+            color: 0, 0, 0
+            size_hint_y: None
+            height: '40dp'
+
+        # Icons Row
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                size_hint_x: 0.2
+            Button:
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                size_hint_x: 0.2
+            Button:
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                size_hint_x: 0.2
+        
+        # Content Layout
+        BoxLayout:
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'HOME ACTIVITY'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'PROGRESS'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+            BoxLayout:
+                orientation: 'vertical'
+                Label:
+                    text: 'ATTENDANCE'
+                    color: 0, 0, 0
+                    font_size: 13
+                    size_hint_y: None
+                    height: '30dp'
+                Label:
+                    text: ''
+                    size_hint_y: 1
+
+        # Course Schedule
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'COURSE SCHEDULE'
+                font_size: 30
+                color: 0, 0, 0
+                size_hint_y: None
+                height: '30dp'
+            Label:
+                text: ''
+                size_hint_y: 1
+
+        # Bottom Navigation
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11         
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'account_tab'
+
+<AboutCenterTab>:
+    name: 'about_center_tab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'ABOUT CENTER'
+            color: 0, 0, 0
+            size_hint_x: 1
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11         
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'account_tab'
+
+<MessagesTab>:
+    name: 'messages_tab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'MESSAGES'
+            color: 0, 0, 0
+            size_hint_x: 1
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1  # White background
+                color: 0, 0, 0, 1  # Black text
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1  # White background
+                color: 0, 0, 0, 1  # Black text
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1  # White background
+                color: 0, 0, 0, 1  # Black text
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1  # White background
+                color: 0, 0, 0, 1  # Black text
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1  # White background
+                color: 0, 0, 0, 1  # Black text
+                on_release:
+                    app.root.current = 'account_tab'
+
+<NotificationTab>:
+    name: 'notification_tab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'NOTIFICATION'
+            color: 0, 0, 0
+            size_hint_x: 1
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11         
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'account_tab'
+
+<AccountTab>:
+    name: 'account_tab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        Label:
+            text: 'ACCOUNT'
+            color: 0, 0, 0
+            size_hint_x: 1
+        BoxLayout:
+            size_hint_y: None
+            height: '50dp'
+            Button:
+                text: 'Dashboard'  
+                font_size: 11         
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'dashboard_tab'
+            Button:
+                text: 'About Center'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'about_center_tab'
+            Button:
+                text: 'Notification'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'notification_tab'
+            Button:
+                text: 'Messages'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'messages_tab'
+            Button:
+                text: 'Account'
+                font_size: 11
+                height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
+                on_release:
+                    app.root.current = 'account_tab'
