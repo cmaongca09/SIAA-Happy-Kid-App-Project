@@ -2,13 +2,12 @@
     name: 'termsConditionTab'
 
     ScrollView:
-        do_scroll_y: True
         BoxLayout:
             orientation: 'vertical'
             padding: 20
             spacing: 10
             size_hint_y: None
-            height: self.minimum_height - dp (10)
+            height: self.minimum_height 
     Image:
         source: 'try.jpg'
         allow_stretch: True
@@ -100,6 +99,7 @@
             text: 'Mothers Information'
             font_size: 18
             bold: True
+            color: 0, 0, 0, 1
 
         BoxLayout:
             orientation: 'vertical'
@@ -156,16 +156,17 @@
                 pos_hint: {'center_x': 0.5}
 
         Label:
-            text: 'Father\'s Information'
+            text: 'Fathers Information'
             font_size: 18
             bold: True
+            color: 0, 0, 0, 1
 
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
             height: 40
             Label:
-                text: 'Father\'s Name:'
+                text: 'Fathers Name:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
@@ -215,16 +216,17 @@
                 pos_hint: {'center_x': 0.5}
 
         Label:
-            text: 'Guardian\'s Information'
+            text: 'Guardians Information'
             font_size: 18
             bold: True
+            color: 0, 0, 0, 1
 
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
             height: 40
             Label:
-                text: 'Guardian\'s Name:'
+                text: 'Guardians Name:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
@@ -236,17 +238,31 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
-            orientation: 'vertical'
+            orientation: 'horizontal'
             size_hint_y: None
             height: 40
+            spacing: 10
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 80
+        spacing: 10
+
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 40
+            spacing: 10
+
             Label:
                 text: 'Date of Birth:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
-                size_hint_y: None
-                height: 15
+                size_hint_x: None
+                width: 120
+
             TextInput:
                 id: dob_guardian
                 multiline: False
@@ -256,15 +272,18 @@
                 pos_hint: {'center_x': 0.5}
 
         BoxLayout:
-            orientation: 'vertical'
+            orientation: 'horizontal'
             size_hint_y: None
             height: 40
+            spacing: 10
+
             Label:
                 text: 'Occupation:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
-                size_hint_y: None
-                height: 15
+                size_hint_x: None
+                width: 120
+
             TextInput:
                 id: occupation_guardian
                 multiline: False
@@ -273,30 +292,40 @@
                 height: 30
                 pos_hint: {'center_x': 0.5}
 
-    BoxLayout:
-        orientation: 'vertical'
-        size_hint_y: None
-        height: 80
-        spacing: 10
-        pos_hint: {'center_x': 0.5, 'top': 0.15}
+            Button:
+                text: 'Terms and Conditions'
+                size_hint: None, None
+                size: 200, 50
+                pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # Center the button horizontally and vertically
+                background_color: 0, 0, 0, 0  # Transparent background
+                color: 0, 0, 0  # Black text color
+                font_size: 17
+                on_release: app.show_terms_popup()
 
-        Button:
-            text: 'Next'
-            size_hint: None, None
-            size: 150, 40
-            pos_hint: {'center_x': 0.5}
-            background_color: 0, 3, 0, 2  # Green color
-            color: 0, 0, 0 
-            on_release:
-                app.root.current = 'create_account'
+        BoxLayout:
+            orientation: 'horizontal'
+            size_hint_y: None
+            height: 40
+            spacing: 10
+            pos_hint: {'center_x': 0.7, 'top': 0.15}  # Adjusted position to move box layout containing buttons higher
 
-        Button:
-            text: 'Back'
-            font_size: 15
-            size_hint: None, None
-            size: 100, 35
-            pos_hint: {'center_x': 0.5}
-            background_color: 0, 0, 1, 1  # Blue color
-            color: 1, 1, 1  # White text color
-            on_release:
-                app.root.current = 'login'
+            Button:
+                text: 'Next'
+                size_hint: None, None
+                size: 150, 40
+                pos_hint: {'center_x': 0.5}
+                background_color: 0, 3, 0, 2  # Green color
+                color: 0, 0, 0 
+                on_release:
+                    app.root.current = 'create_account'
+
+            Button:
+                text: 'Back'
+                font_size: 15
+                size_hint: None, None
+                size: 100, 35
+                pos_hint: {'center_x': 0.5}
+                background_color: 0, 0, 1, 1  # Blue color
+                color: 1, 1, 1  # White text color
+                on_release:
+                    app.root.current = 'login'
