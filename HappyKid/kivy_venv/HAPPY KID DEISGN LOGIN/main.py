@@ -2,7 +2,7 @@ from kivy.app import App
 from kivy.lang import Builder
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.gridlayout import GridLayout
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivy.uix.screenmanager import ScreenManager, Screen, FadeTransition
 from kivy.core.window import Window
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
@@ -10,7 +10,6 @@ from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.textinput import TextInput
-from kivy.uix.screenmanager import NoTransition
 from kivy.clock import Clock
 from kivy.uix.popup import Popup
 from kivy.uix.label import Label
@@ -44,6 +43,14 @@ Builder.load_file(resource_path('createAccount.kv'))
 Builder.load_file(resource_path('createAccount2.kv'))
 Builder.load_file(resource_path('Dashboard.kv'))
 Builder.load_file(resource_path('termsandcondition.kv'))
+
+
+import mysql.connector
+from datetime import datetime
+import calendar
+
+Window.size = (380, 650)
+
 
 class DatePicker(TextInput):
     def __init__(self, **kwargs):
@@ -98,7 +105,6 @@ class DatePickerPopup(Popup):
             f"{datetime.now().year}-{datetime.now().month}-{instance.text}", '%Y-%m-%d')
         self.parent_widget.text = selected_date.strftime('%Y-%m-%d')
         self.dismiss()
-
 
 class LoginScreen(Screen):
     def create_account(self):
@@ -249,11 +255,11 @@ class TestApp(App):
 class CustomScreenManager(ScreenManager):
     def __init__(self, **kwargs):
         super(CustomScreenManager, self).__init__(**kwargs)
-        self.transition = NoTransition()  # Change the transition to NoTransition for pop-up effect
+        self.transition = FadeTransition()  # Change the transition to FadeTransition for a fade effect
         Clock.schedule_once(self.enable_transition, 5)  # Schedule enabling transition after 1 second
 
     def enable_transition(self, dt):
-        self.transition = NoTransition()  # Change to the desired transition after delay
+        self.transition = FadeTransition()  # Change to the desired transition after delay
 
 if __name__ == '__main__':
     Builder.load_file("main.kv")
