@@ -13,7 +13,7 @@
         padding: [100, 50, 100, 50]  # Top, right, bottom, left
         spacing: 10
         size_hint: (1, 1)
-        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        pos_hint: {'center_x': 0.5, 'center_y': 0.4}
         Label:
             text: "CONSULTATION FORM"
             font_size: 22
@@ -33,6 +33,135 @@
             width: 400
             height: self.minimum_height
             pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Name'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: name
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Age'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: age
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Address'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: address
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Phone Number'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: phone_number
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Username'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: username
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Password'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: password
+                    password: True
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Confirm Password'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                TextInput:
+                    id: confirm_password
+                    password: True
+                    multiline: False
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+
             BoxLayout:
                 orientation: 'vertical'
                 size_hint_y: None
@@ -49,6 +178,26 @@
                     width: 300
                     height: 30
                     pos_hint: {'center_x': 0.5}
+
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Select Appointment Time'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                Spinner:
+                    id: time_spinner
+                    text: 'Select Time'
+                    values: ['09:00 AM', '09:30 AM', '10:00 AM', '10:30 AM', '11:00 AM', '11:30 AM', '01:00 PM', '01:30 PM', '02:00 PM', '02:30 PM', '03:00 PM', '03:30 PM']
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+
             BoxLayout:  # This line was fixed with proper indentation
                 orientation: 'vertical'
                 size_hint_y: None
