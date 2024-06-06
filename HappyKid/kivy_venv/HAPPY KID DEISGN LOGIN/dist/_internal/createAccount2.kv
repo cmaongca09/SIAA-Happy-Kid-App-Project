@@ -1,0 +1,66 @@
+<CreateAccountScreen2>:
+    name: 'create_account2'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [100, 50, 100, 50]  # Top, right, bottom, left
+        spacing: 10
+        size_hint: (1, 1)
+        pos_hint: {'center_x': 0.5, 'center_y': 0.8}
+        Label:
+            text: "CONSULTATION FORM"
+            font_size: 22
+            bold: True
+            color: 0, 0, 0, 1  # Black color
+            size_hint: (None, None)
+            height: 100
+            pos_hint: {'center_x': 0.5}
+            valign: 'middle'
+            halign: 'center'
+        GridLayout:
+            cols: 1
+            row_default_height: 50
+            row_force_default: True
+            spacing: 5
+            size_hint: (None, None)
+            width: 400
+            height: self.minimum_height
+            pos_hint: {'center_x': 0.5}
+            BoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 70
+                Label:
+                    text: 'Select Appointment Date'
+                    font_size: 12
+                    color: 0, 0, 0, 1  # Black color
+                    size_hint_y: None
+                    height: 15
+                DatePicker:
+                    id: date_picker
+                    size_hint: (None, None)
+                    width: 300
+                    height: 30
+                    pos_hint: {'center_x': 0.5}
+            BoxLayout:  # This line was fixed with proper indentation
+                orientation: 'vertical'
+                size_hint_y: None
+                height: 0
+                Button:
+                    text: 'Confirm Information'
+                    font_size: 15
+                    size_hint: (None, None)
+                    width: 140
+                    height: 45
+                    pos_hint: {'center_x': 0.5}
+                    background_color:  1, 6, 0, 1  # Green color
+                    color: 0, 0, 0 
+                    on_release:
+                        app.root.current = 'dashboard_tab'

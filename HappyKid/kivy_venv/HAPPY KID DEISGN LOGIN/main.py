@@ -11,11 +11,46 @@ from kivy.uix.boxlayout import BoxLayout
 from kivy.uix.scrollview import ScrollView
 from kivy.uix.textinput import TextInput
 from kivy.clock import Clock
+from kivy.uix.popup import Popup
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.floatlayout import FloatLayout
+from kivy.uix.gridlayout import GridLayout
+from kivy.uix.textinput import TextInput
+from datetime import datetime
+
+import calendar
+import mysql.connector
+import calendar
+import os
+import sys
+
+
+Window.size = (380, 650)
+
+def resource_path(relative_path):
+    """ Get absolute path to resource, works for dev and for PyInstaller """
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+
+    return os.path.join(base_path, relative_path)
+
+Builder.load_file(resource_path('main.kv'))
+Builder.load_file(resource_path('createAccount.kv'))
+Builder.load_file(resource_path('createAccount2.kv'))
+Builder.load_file(resource_path('Dashboard.kv'))
+Builder.load_file(resource_path('termsandcondition.kv'))
+
+
 import mysql.connector
 from datetime import datetime
 import calendar
 
 Window.size = (380, 650)
+
 
 class DatePicker(TextInput):
     def __init__(self, **kwargs):
@@ -232,5 +267,6 @@ if __name__ == '__main__':
     Builder.load_file("createAccount2.kv")
     Builder.load_file("Dashboard.kv")
     Builder.load_file("termsandcondition.kv")
+    
 
     TestApp().run()

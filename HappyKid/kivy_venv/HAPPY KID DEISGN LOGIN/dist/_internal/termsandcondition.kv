@@ -1,0 +1,48 @@
+<TermsAndConditionTab>:
+    name: 'termsConditionTab'
+    Image:
+        source: 'try.jpg'
+        allow_stretch: True
+        keep_ratio: False
+        canvas.before:
+            Rectangle:
+                pos: self.pos
+                size: self.size
+
+    Button:
+        text: 'Terms and Conditions'
+        size_hint: None, None
+        size: 200, 50
+        pos_hint: {'center_x': 0.5, 'center_y': 0.6}  # Center the button horizontally and vertically
+        background_color: 0, 3, 0, 2  # Green color
+        color: 0, 0, 0 
+        on_release: app.show_terms_popup()
+        
+
+    BoxLayout:
+        orientation: 'vertical'
+        size_hint_y: None
+        height: 80
+        spacing: 10
+        pos_hint: {'center_x': 0.5, 'top': 0.15}  # Adjusted position to move box layout containing buttons higher
+        
+        Button:
+            text: 'Next'
+            size_hint: None, None
+            size: 150, 40
+            pos_hint: {'center_x': 0.5}
+            background_color: 0, 3, 0, 2  # Green color
+            color: 0, 0, 0 
+            on_release:
+                app.root.current = 'create_account'
+
+        Button:
+            text: 'Back'
+            font_size: 15
+            size_hint: None, None
+            size: 100, 35
+            pos_hint: {'center_x': 0.5}
+            background_color: 0, 0, 1, 1  # Blue color
+            color: 1, 1, 1  # White text color
+            on_release:
+                app.root.current = 'login'
