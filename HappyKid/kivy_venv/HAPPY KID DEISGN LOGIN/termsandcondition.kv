@@ -1,5 +1,14 @@
 <TermsAndConditionTab>:
     name: 'termsConditionTab'
+
+    ScrollView:
+        do_scroll_y: True
+        BoxLayout:
+            orientation: 'vertical'
+            padding: 20
+            spacing: 10
+            size_hint_y: None
+            height: self.minimum_height - dp (10)
     Image:
         source: 'try.jpg'
         allow_stretch: True
@@ -9,23 +18,268 @@
                 pos: self.pos
                 size: self.size
 
-    Button:
-        text: 'Terms and Conditions'
-        size_hint: None, None
-        size: 200, 50
-        pos_hint: {'center_x': 0.5, 'center_y': 0.2}  # Center the button horizontally and vertically
-        background_color: 1, 1, 1, 1  # Green color
-        color: 0, 0, 0 
-        on_release: app.show_terms_popup()
-        
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Name of the Child:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: name_of_child
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Date of Birth:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: dob_child
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Address:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: address
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Contact Numbers: (Also for verification/approval of account)'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: contact_numbers
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        Label:
+            text: 'Mothers Information'
+            font_size: 18
+            bold: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Mothers Name:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: mother_name
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Date of Birth:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: dob_mother
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Occupation/Business:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: occupation_mother
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        Label:
+            text: 'Father\'s Information'
+            font_size: 18
+            bold: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Father\'s Name:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: father_name
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Date of Birth:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: dob_father
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Occupation/Business:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: occupation_father
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        Label:
+            text: 'Guardian\'s Information'
+            font_size: 18
+            bold: True
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Guardian\'s Name:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: guardian_name
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Date of Birth:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: dob_guardian
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: None
+            height: 40
+            Label:
+                text: 'Occupation:'
+                font_size: 12
+                color: 0, 0, 0, 1  # Black color
+                size_hint_y: None
+                height: 15
+            TextInput:
+                id: occupation_guardian
+                multiline: False
+                size_hint: (None, None)
+                width: 300
+                height: 30
+                pos_hint: {'center_x': 0.5}
 
     BoxLayout:
         orientation: 'vertical'
         size_hint_y: None
         height: 80
         spacing: 10
-        pos_hint: {'center_x': 0.5, 'top': 0.15}  # Adjusted position to move box layout containing buttons higher
-        
+        pos_hint: {'center_x': 0.5, 'top': 0.15}
+
         Button:
             text: 'Next'
             size_hint: None, None
