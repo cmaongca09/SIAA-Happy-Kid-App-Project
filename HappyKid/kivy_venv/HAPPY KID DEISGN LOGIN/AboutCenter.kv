@@ -1,5 +1,5 @@
-<AccountTab>:
-    name: 'account_tab'
+<AboutCenterTab>:
+    name: 'about_center_tab'
     Image:
         source: 'try.jpg'
         allow_stretch: True
@@ -11,7 +11,7 @@
     BoxLayout:
         orientation: 'vertical'
         Label:
-            text: 'ACCOUNT'
+            text: 'ABOUT CENTER'
             color: 0, 0, 0
             size_hint_x: 1
         BoxLayout:
@@ -21,29 +21,44 @@
                 text: 'Dashboard'  
                 font_size: 11         
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'dashboard_tab'
             Button:
                 text: 'About Center'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'about_center_tab'
             Button:
                 text: 'Notification'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'notification_tab'
             Button:
                 text: 'Messages'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'messages_tab'
             Button:
                 text: 'Account'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'account_tab'

@@ -1,9 +1,7 @@
-#:kivy 2.3.0
-
 <AccountTab>:
     name: 'account_tab'
     Image:
-        source: 'book.jpg'
+        source: 'try.jpg'
         allow_stretch: True
         keep_ratio: False
         canvas.before:
@@ -20,32 +18,48 @@
             size_hint_y: None
             height: '50dp'
             Button:
-                text: 'Dashboard'  
-                font_size: 11         
-                height: 50
-                on_release:
-                    app.root.current = 'dashboard_tab'
+                orientation: 'vertical'
+                size_hint: None, None
+                size: 100, 100
+                background_normal: ''
+                background_color: 0, 0, 0, 0  # Set background color to transparent
+                Image:
+                    source: 'Home.png'  # Specify the path to your PNG icon
+                    size: 30, 30  # Set the size of the icon
+                    pos: self.parent.center_x - self.width/2, self.parent.center_y + 10
             Button:
                 text: 'About Center'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'about_center_tab'
             Button:
                 text: 'Notification'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'notification_tab'
             Button:
                 text: 'Messages'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'messages_tab'
             Button:
                 text: 'Account'
                 font_size: 11
                 height: 50
+                background_normal: ''
+                background_color: 1, 1, 1, 1
+                color: 0, 0, 0, 1
                 on_release:
                     app.root.current = 'account_tab'

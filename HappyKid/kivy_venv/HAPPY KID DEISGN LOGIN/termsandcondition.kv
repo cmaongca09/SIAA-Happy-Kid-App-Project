@@ -1,13 +1,11 @@
 <TermsAndConditionTab>:
     name: 'termsConditionTab'
-
-    ScrollView:
-        BoxLayout:
-            orientation: 'vertical'
-            padding: 20
-            spacing: 10
-            size_hint_y: None
-            height: self.minimum_height 
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 20
+        spacing: 10
+        size_hint_y: None
+        height: self.minimum_height  
     Image:
         source: 'try.jpg'
         allow_stretch: True
@@ -16,13 +14,12 @@
             Rectangle:
                 pos: self.pos
                 size: self.size
-
     BoxLayout:
         orientation: 'vertical'
         padding: 20
         spacing: 10
-        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
-
+        size_hint_y: None
+        height: self.minimum_height
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -32,7 +29,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: name_of_child
                 multiline: False
@@ -40,7 +37,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -50,7 +46,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: dob_child
                 multiline: False
@@ -58,7 +54,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -68,7 +63,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: address
                 multiline: False
@@ -76,7 +71,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -86,7 +80,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: contact_numbers
                 multiline: False
@@ -94,13 +88,13 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         Label:
             text: 'Mothers Information'
             font_size: 18
             bold: True
             color: 0, 0, 0, 1
-
+            size_hint_y: None
+            height: 30
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -110,7 +104,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: mother_name
                 multiline: False
@@ -118,7 +112,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -128,7 +121,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: dob_mother
                 multiline: False
@@ -136,7 +129,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -146,7 +138,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: occupation_mother
                 multiline: False
@@ -154,13 +146,13 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         Label:
             text: 'Fathers Information'
             font_size: 18
             bold: True
             color: 0, 0, 0, 1
-
+            size_hint_y: None
+            height: 30
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -170,7 +162,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: father_name
                 multiline: False
@@ -178,7 +170,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -188,7 +179,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: dob_father
                 multiline: False
@@ -196,7 +187,6 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -206,7 +196,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: occupation_father
                 multiline: False
@@ -214,13 +204,13 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-
         Label:
             text: 'Guardians Information'
             font_size: 18
             bold: True
             color: 0, 0, 0, 1
-
+            size_hint_y: None
+            height: 30
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -230,7 +220,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 15
+                height: 20
             TextInput:
                 id: guardian_name
                 multiline: False
@@ -238,31 +228,17 @@
                 width: 300
                 height: 30
                 pos_hint: {'center_x': 0.5}
-        BoxLayout:
-            orientation: 'horizontal'
-            size_hint_y: None
-            height: 40
-            spacing: 10
-
-    BoxLayout:
-        orientation: 'vertical'
-        size_hint_y: None
-        height: 80
-        spacing: 10
 
         BoxLayout:
-            orientation: 'horizontal'
+            orientation: 'vertical'
             size_hint_y: None
             height: 40
-            spacing: 10
-
             Label:
                 text: 'Date of Birth:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
-                size_hint_x: None
-                width: 120
-
+                size_hint_y: None
+                height: 15
             TextInput:
                 id: dob_guardian
                 multiline: False
@@ -272,18 +248,15 @@
                 pos_hint: {'center_x': 0.5}
 
         BoxLayout:
-            orientation: 'horizontal'
+            orientation: 'vertical'
             size_hint_y: None
             height: 40
-            spacing: 10
-
             Label:
                 text: 'Occupation:'
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
-                size_hint_x: None
-                width: 120
-
+                size_hint_y: None
+                height: 15
             TextInput:
                 id: occupation_guardian
                 multiline: False
@@ -302,18 +275,11 @@
                 font_size: 17
                 on_release: app.show_terms_popup()
 
-        BoxLayout:
-            orientation: 'horizontal'
-            size_hint_y: None
-            height: 40
-            spacing: 10
-            pos_hint: {'center_x': 0.7, 'top': 0.15}  # Adjusted position to move box layout containing buttons higher
-
             Button:
                 text: 'Next'
                 size_hint: None, None
                 size: 150, 40
-                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # Center the button horizontally and vertically
                 background_color: 0, 3, 0, 2  # Green color
                 color: 0, 0, 0 
                 on_release:
