@@ -38,11 +38,7 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-Builder.load_file(resource_path('main.kv'))
-Builder.load_file(resource_path('createAccount.kv'))
-Builder.load_file(resource_path('createAccount2.kv'))
-Builder.load_file(resource_path('Dashboard.kv'))
-Builder.load_file(resource_path('termsandcondition.kv'))
+
 
 
 import mysql.connector
@@ -262,11 +258,12 @@ class CustomScreenManager(ScreenManager):
         self.transition = FadeTransition()  # Change to the desired transition after delay
 
 if __name__ == '__main__':
-    Builder.load_file("main.kv")
-    Builder.load_file("createAccount.kv")
-    Builder.load_file("createAccount2.kv")
-    Builder.load_file("Dashboard.kv")
-    Builder.load_file("termsandcondition.kv")
+    
+    Builder.load_file(resource_path('main.kv'))
+    Builder.load_file(resource_path('createAccount.kv'))
+    Builder.load_file(resource_path('createAccount2.kv'))
+    Builder.load_file(resource_path('Dashboard.kv'))
+    Builder.load_file(resource_path('termsandcondition.kv'))
     
 
     TestApp().run()
