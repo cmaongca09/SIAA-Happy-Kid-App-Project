@@ -42,6 +42,7 @@
         spacing: 10
         size_hint_y: None
         height: self.minimum_height
+        pos_hint: {'center_x': 0.5, 'center_y': 0.5}
         BoxLayout:
             orientation: 'vertical'
             size_hint_y: None
@@ -184,7 +185,7 @@
                 font_size: 12
                 color: 0, 0, 0, 1  # Black color
                 size_hint_y: None
-                height: 20
+                height: 40
             TextInput:
                 id: father_name
                 multiline: False
@@ -225,73 +226,13 @@
                 size_hint: (None, None)
                 width: 300
                 height: 30
-                pos_hint: {'center_x': 0.5}
-        Label:
-            text: 'Guardians Information'
-            font_size: 18
-            bold: True
-            color: 0, 0, 0, 1
-            size_hint_y: None
-            height: 30
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            height: 40
-            Label:
-                text: 'Guardians Name:'
-                font_size: 12
-                color: 0, 0, 0, 1  # Black color
-                size_hint_y: None
-                height: 20
-            TextInput:
-                id: guardian_name
-                multiline: False
-                size_hint: (None, None)
-                width: 300
-                height: 30
-                pos_hint: {'center_x': 0.5}
-
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            height: 40
-            Label:
-                text: 'Date of Birth:'
-                font_size: 12
-                color: 0, 0, 0, 1  # Black color
-                size_hint_y: None
-                height: 15
-            TextInput:
-                id: dob_guardian
-                multiline: False
-                size_hint: (None, None)
-                width: 300
-                height: 30
-                pos_hint: {'center_x': 0.5}
-
-        BoxLayout:
-            orientation: 'vertical'
-            size_hint_y: None
-            height: 40
-            Label:
-                text: 'Occupation:'
-                font_size: 12
-                color: 0, 0, 0, 1  # Black color
-                size_hint_y: None
-                height: 15
-            TextInput:
-                id: occupation_guardian
-                multiline: False
-                size_hint: (None, None)
-                width: 300
-                height: 30
-                pos_hint: {'center_x': 0.5}
+                pos_hint: {'center_x': 0.5,'center_y': 0.3}
 
             Button:
                 text: 'Terms and Conditions'
                 size_hint: None, None
                 size: 200, 50
-                pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # Center the button horizontally and vertically
+                pos_hint: {'center_x': 0.5, 'center_y': 0.06}  # Center the button horizontally and vertically
                 background_color: 0, 0, 0, 0  # Transparent background
                 color: 0, 0, 0  # Black text color
                 font_size: 17
@@ -301,7 +242,7 @@
                 text: 'Next'
                 size_hint: None, None
                 size: 150, 40
-                pos_hint: {'center_x': 0.5, 'center_y': 0.1}  # Center the button horizontally and vertically
+                pos_hint: {'center_x': 0.5, 'center_y': 0.2}  # Center the button horizontally and vertically
                 background_color: 0, 3, 0, 2  # Green color
                 color: 0, 0, 0 
                 on_release:
@@ -313,7 +254,7 @@
                 size_hint: None, None
                 size: 100, 35
                 pos_hint: {'center_x': 0.5}
-                background_color: 0, 0, 1, 1  # Blue color
-                color: 1, 1, 1  # White text color
+                background_color: 0, 0, 0, 0  # Blue color
+                color: 0, 0 ,0 # White text color
                 on_release:
                     app.root.current = 'login'
