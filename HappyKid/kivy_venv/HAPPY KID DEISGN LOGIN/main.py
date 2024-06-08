@@ -17,7 +17,11 @@ from kivy.uix.button import Button
 from kivy.uix.floatlayout import FloatLayout
 from kivy.uix.gridlayout import GridLayout
 from kivy.uix.textinput import TextInput
+from kivy.uix.recycleview import RecycleView
+from kivy.uix.recycleboxlayout import RecycleBoxLayout
+from kivy.properties import StringProperty
 from datetime import datetime
+
 
 import calendar
 import mysql.connector
@@ -27,6 +31,9 @@ import sys
 
 
 Window.size = (380, 650)
+
+class TermsItem(BoxLayout):
+    text = StringProperty('')
 
 def resource_path(relative_path):
     """ Get absolute path to resource, works for dev and for PyInstaller """
@@ -38,16 +45,19 @@ def resource_path(relative_path):
 
     return os.path.join(base_path, relative_path)
 
-
-
-
-import mysql.connector
-from datetime import datetime
-import calendar
-
 Window.size = (380, 650)
 
-
+class MyRecycleView(RecycleView):
+    def __init__(self, **kwargs):
+        super(MyRecycleView, self).__init__(**kwargs)
+        self.viewclass = 'Label'
+        self.layout_manager = RecycleBoxLayout(default_size=(None, 56),
+                                               default_size_hint=(1, None),
+                                               size_hint_y=None,
+                                               orientation='vertical')
+        self.layout_manager.bind(minimum_height=self.layout_manager.setter('height'))
+        self.add_widget(self.layout_manager)
+        
 class DatePicker(TextInput):
     def __init__(self, **kwargs):
         super(DatePicker, self).__init__(**kwargs)
@@ -68,29 +78,28 @@ class DatePickerPopup(Popup):
         self.parent_widget = parent
         self.title = 'Select a Date'
         self.size_hint = (0.9, 0.9)
-        self.content = FloatLayout()
 
-        self.layout = GridLayout(cols=7, size_hint=(1, 0.8), pos_hint={'center_x': 0.5, 'center_y': 0.6})
-        self.content.add_widget(self.layout)
+        # Create a GridLayout to contain the content
+        self.layout = GridLayout(cols=1, spacing=10, size_hint_y=None)
+        self.layout.bind(minimum_height=self.layout.setter('height'))
 
+        # Add widgets to the GridLayout
         self.update_calendar(datetime.now().year, datetime.now().month)
-
-        self.dismiss_button = Button(text='Dismiss', size_hint=(1, 0.1), pos_hint={'center_x': 0.5, 'y': 0.05}, background_color=(0, 0, 0, 0))
+        self.dismiss_button = Button(text='Dismiss', size_hint=(1, None), height=40)
         self.dismiss_button.bind(on_release=self.dismiss)
-        self.dismiss_button.color = (1, 1, 1, 1)  # White text color
-        self.content.add_widget(self.dismiss_button)
+
+        # Add the widgets to the layout
+        self.layout.add_widget(self.dismiss_button)
+
+        # Set the content of the Popup to the layout
+        self.content = self.layout
 
     def update_calendar(self, year, month):
         self.layout.clear_widgets()
-        days = ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa']
-        for day in days:
-            self.layout.add_widget(Label(text=day, color=(1, 1, 1, 1)))
 
         cal = calendar.Calendar().itermonthdays2(year, month)
         for day, weekday in cal:
-            if day == 0:
-                self.layout.add_widget(Label(text='', color=(1, 1, 1, 1)))
-            else:
+            if day != 0:
                 btn = Button(text=str(day), background_color=(0, 0, 0, 0))
                 btn.bind(on_release=self.select_date)
                 btn.color = (1, 1, 1, 1)  # White text color
@@ -101,6 +110,7 @@ class DatePickerPopup(Popup):
             f"{datetime.now().year}-{datetime.now().month}-{instance.text}", '%Y-%m-%d')
         self.parent_widget.text = selected_date.strftime('%Y-%m-%d')
         self.dismiss()
+
 
 class LoginScreen(Screen):
     def create_account(self):

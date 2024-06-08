@@ -1,3 +1,10 @@
+<TermsItem>:
+    orientation: 'vertical'
+    Label:
+        text: root.text
+
+
+
 <TermsAndConditionTab>:
     name: 'termsConditionTab'
     BoxLayout:
@@ -14,6 +21,21 @@
             Rectangle:
                 pos: self.pos
                 size: self.size
+    RecycleView:
+        id: rv
+        scroll_type: ['bars', 'content']
+        bar_width: '10dp'
+        viewclass: 'TermsItem'
+        data: [{'text': str(x)} for x in range(100)]  # Adjust the data as per your requirements
+        RecycleBoxLayout:
+            default_size_hint: None, None
+            default_size: None, dp(56)
+            size_hint_y: None
+            height: self.minimum_height
+            orientation: 'vertical'
+            padding: 10
+            spacing: 10
+
     BoxLayout:
         orientation: 'vertical'
         padding: 20
